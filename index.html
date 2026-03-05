@@ -32,30 +32,39 @@
     font-size: 20px; font-weight: 700; font-style: italic;
     color: var(--blue); letter-spacing: 0.03em;
     text-decoration: none; margin-right: auto;
-    display: flex; align-items: center; gap: 4px;
+    display: flex; align-items: center; gap: 3px;
+    flex-shrink: 0;
   }
-  .nav-first-name {
-  display: inline-block;
-  min-width: 42px;
-  margin-right: -10px;
-  transition: opacity 0.2s ease;
-}
   .nav-name-text {
-  display: inline-block;
-  min-width: 90px;
-  margin-right: -8px;
-}
-  .nav-flower {
-    height: 20px; width: 20px; object-fit: contain;
-    vertical-align: middle;
-    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
-    cursor: pointer;
+    position: relative;
     display: inline-block;
+    width: 2.1em;
+    height: 1.2em;
   }
-  .nav-flower:hover {
-    transform: rotate(30deg) scale(1.15);
-    filter: drop-shadow(0 2px 8px rgba(192,68,68,0.4));
+  .nav-name:hover .nav-name-text {
+    width: 2.1em;
+  }
+  .nav-name-text .n-erica,
+  .nav-name-text .n-yue {
+    position: absolute;
+    top: 0;
+    transition: opacity 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-name-text .n-erica { left: 0; opacity: 1; }
+  .nav-name-text .n-yue   { left: 50%; transform: translateX(-50%); opacity: 0; }
+  .nav-name:hover .nav-name-text .n-erica { opacity: 0; }
+  .nav-name:hover .nav-name-text .n-yue   { opacity: 1; }
+  .nav-flower {
+    height: 30px; width: 30px; object-fit: contain;
+    vertical-align: middle;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .nav-name:hover .nav-flower {
+    transform: rotate(15deg) scale(1.1);
   }
   nav a.nav-link { text-decoration: none; color: var(--navy); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; position: relative; padding-bottom: 3px; transition: color 0.3s; }
   nav a.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--rose); transition: width 0.3s; }
@@ -186,10 +195,7 @@
 <body>
 
 <nav>
- <a href="#home" class="nav-name">
-  <span class="nav-name-text"><span class="nav-first-name">Erica</span> Shao</span>
-  <img src="image/flower.png" alt="Flower" class="nav-flower">
- </a>
+  <a href="#home" class="nav-name"><span class="nav-name-text"><span class="n-erica">Erica</span><span class="n-yue">Yue</span></span> Shao <img src="image/flower.png" alt="Flower" class="nav-flower"></a>
   <a href="#home" class="nav-link">Home</a>
   <a href="#about" class="nav-link">About</a>
   <a href="#projects" class="nav-link">Projects</a>
@@ -207,8 +213,8 @@
     <div class="hero-text-col">
       <p class="hero-eyebrow">Instructional Designer &amp; Learning Experience Designer</p>
       <h1>Erica<br><em>(Yue) Shao</em></h1>
-      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; <a href="mailto:syue1@unc.edu" target="_blank" style="color:inherit;text-decoration:none;">syue1@unc.edu</a></p>
-      <p class="hero-desc">I turn learning science into real experiences -- designing curricula, prototyping interactive tools, and building systems that actually help people learn. Currently finishing my Master's at UNC Chapel Hill, and ready to bring that work somewhere it matters.</p>
+      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; syue1@unc.edu</p>
+      <p class="hero-desc">I turn learning science into real experiences — designing curricula, prototyping interactive tools, and building systems that actually help people learn. Currently finishing my Master's at UNC Chapel Hill, and ready to bring that work somewhere it matters.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-solid">View My Work</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -224,13 +230,14 @@
       <div class="about-left">
         <p class="s-label">About Me</p>
         <h2 class="s-title">Learning design that's<br><em>grounded in people</em></h2>
-        <p>I'm an instructional and learning experience designer who gets genuinely excited about the gap between how learning is designed and how it actually happens. My work sits at the intersection of learning science, UX, and educational technology -- and most of it starts with a good needs analysis and ends with a prototype someone can actually use.</p>
-        <p>I've spent the past few years designing and redesigning learning experiences across contexts: K-12 classrooms in Shanghai, EdTech platforms, and graduate research at UNC Chapel Hill. What ties it all together is a belief that good design should be invisible -- learners shouldn't notice the scaffolding, they should just feel more capable.</p>
-        <p>I'm currently looking for instructional designer or LXD roles at organizations that take learning seriously -- whether that's an EdTech company, a university, or a corporate L&amp;D team building something worth building.</p>
+        <p>I'm an instructional and learning experience designer who gets genuinely excited about the gap between how learning is designed and how it actually happens. My work sits at the intersection of learning science, UX, and educational technology — and most of it starts with a good needs analysis and ends with a prototype someone can actually use.</p>
+        <p>I've spent the past few years designing and redesigning learning experiences across contexts: K-12 classrooms in Shanghai, EdTech platforms, and graduate research at UNC Chapel Hill. What ties it all together is a belief that good design should be invisible — learners shouldn't notice the scaffolding, they should just feel more capable.</p>
+        <p>I'm currently looking for instructional designer or LXD roles at organizations that take learning seriously — whether that's an EdTech company, a university, or a corporate L&amp;D team building something worth building.</p>
         <div class="contact-row">
-          <a href="mailto:syue1@unc.edu" target="_blank" class="cpill">
+          <a href="mailto:syue1@unc.edu" class="cpill" target="_blank" rel="noopener">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-            syue1@unc.edu</a>
+            syue1@unc.edu
+          </a>
           <a href="tel:9842916230" class="cpill">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.17a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg>
             (984) 291-6230
@@ -272,7 +279,7 @@
         <div class="proj-info">
           <p class="proj-tag">Instructional Design</p>
           <h3>Project Title Here</h3>
-          <p>A brief description of your project -- what problem it solved, who it was for, and what your role was in its creation.</p>
+          <p>A brief description of your project — what problem it solved, who it was for, and what your role was in its creation.</p>
           <div class="proj-footer">
             <span class="proj-status">Coming Soon</span>
             <a href="#" class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
@@ -284,7 +291,7 @@
         <div class="proj-info">
           <p class="proj-tag">Learning Analytics</p>
           <h3>Project Title Here</h3>
-          <p>A brief description of your project -- what problem it solved, who it was for, and what your role was in its creation.</p>
+          <p>A brief description of your project — what problem it solved, who it was for, and what your role was in its creation.</p>
           <div class="proj-footer">
             <span class="proj-status">Coming Soon</span>
             <a href="#" class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
@@ -296,7 +303,7 @@
         <div class="proj-info">
           <p class="proj-tag">UX &amp; Curriculum Design</p>
           <h3>Project Title Here</h3>
-          <p>A brief description of your project -- what problem it solved, who it was for, and what your role was in its creation.</p>
+          <p>A brief description of your project — what problem it solved, who it was for, and what your role was in its creation.</p>
           <div class="proj-footer">
             <span class="proj-status">Coming Soon</span>
             <a href="#" class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
@@ -368,7 +375,7 @@
           <h3>Instructional Design Intern</h3>
           <p class="period">Apr 2025 - Aug 2025</p>
           <ul>
-            <li>Redesigned K-12 curricula in Math, Physics, Chemistry, and English -- adapting 115 courses across 10+ regional versions to new standards.</li>
+            <li>Redesigned K-12 curricula in Math, Physics, Chemistry, and English — adapting 115 courses across 10+ regional versions to new standards.</li>
             <li>Conducted pre-launch QA; documented instructional and technical issues before and after release.</li>
             <li>Co-developed an AI-assisted workflow using an open-source agent framework, achieving a ~5x increase in content production efficiency.</li>
             <li>Integrated content into an AI-powered programming platform; converted materials to HTML and debugged logic and syntax errors.</li>
@@ -410,7 +417,7 @@
   <div class="contact-inner">
     <p class="s-label reveal">Contact</p>
     <h2 class="s-title reveal">Let's<br><em>Connect</em></h2>
-    <p class="reveal" style="font-size:15px;color:var(--muted);line-height:1.8;">Open to instructional design and LXD roles -- feel free to reach out to chat about a position, a project, or just learning design in general.</p>
+    <p class="reveal" style="font-size:15px;color:var(--muted);line-height:1.8;">Open to instructional design and LXD roles — feel free to reach out to chat about a position, a project, or just learning design in general.</p>
     <div class="contact-form reveal">
       <div class="form-row">
         <div class="fg"><label>Name</label><input type="text" placeholder="Your name"></div>
@@ -450,17 +457,7 @@
     });
   });
 
-  // Flower hover: default Yue, shows Erica on hover
- var flower = document.querySelector('.nav-flower');
-var firstName = document.querySelector('.nav-first-name');
-if (flower && firstName) {
- flower.addEventListener('mouseenter', function() {
-  firstName.textContent = 'Yue';
-});
-flower.addEventListener('mouseleave', function() {
-  firstName.textContent = 'Erica';
-});
-}
+  // Name toggle handled by CSS :hover on .nav-name
 })();
 </script>
 </body>
