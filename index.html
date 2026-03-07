@@ -461,8 +461,8 @@ html { scroll-behavior: smooth; }
           <p>A K–12 web platform that transforms passive history reading into collaborative inquiry — with peer annotation, AI-generated discussion summaries, an inline AI tutor, and an Era Chat feature where students converse with AI-powered historical figures.</p>
           <div class="proj-tags-row">
             <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
-            <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
             <span class="proj-skill-tag" data-skill="UX Research">UX Research</span>
+            <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
           </div>
           <div class="proj-footer">
             <span class="proj-status live">Live</span>
@@ -826,7 +826,6 @@ function navTo(id, linkEl) {
 document.addEventListener('click', function(e) {
   var tag = e.target.closest('.skill-tag-item.clickable');
   if (!tag) return;
-  e.stopPropagation();
 
   var skill = tag.getAttribute('data-skill');
 
@@ -863,7 +862,6 @@ function showChronicle() {
     document.getElementById('chronicle-root').style.display = 'block';
     window.scrollTo(0, 0);
     window._startChronicleGlow();
-    // re-observe reveals in chronicle
     document.querySelectorAll('#chronicle-root .reveal').forEach(function(el) {
       el.classList.remove('visible');
     });
@@ -874,4 +872,21 @@ function showChronicle() {
       document.querySelectorAll('#chronicle-root .reveal').forEach(function(el) { obs2.observe(el); });
     }, 100);
   }, 1200);
-  setTimeout(f
+  setTimeout(function() {
+    overlay.classList.remove('active');
+  }, 2200);
+}
+
+function showPortfolio() {
+  window._stopChronicleGlow();
+  document.getElementById('chronicle-root').style.display = 'none';
+  document.getElementById('portfolio-root').style.display = 'block';
+  window.scrollTo(0, 0);
+  setTimeout(function() {
+    var el = document.getElementById('projects');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+}
+</script>
+</body>
+</html>
