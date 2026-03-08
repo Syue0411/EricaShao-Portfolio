@@ -73,19 +73,20 @@ html { scroll-behavior: smooth; }
 
 #about { flex-direction: column; }
 .about-inner { max-width: 980px; width: 100%; }
-.about-outer { display: flex; flex-direction: column; gap: 52px; }
+.about-outer { display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; align-items: start; }
 .about-left p { font-size: 15px; line-height: 1.85; color: var(--muted); margin-bottom: 16px; }
+.about-right { padding-top: 183px; }
 .cpill { display: flex; align-items: center; gap: 8px; background: var(--glass); border: 1px solid var(--glass-b); backdrop-filter: blur(8px); border-radius: 30px; padding: 8px 18px; font-size: 13px; color: var(--navy); text-decoration: none; transition: background 0.2s; font-weight: 500; }
 .cpill:hover { background: rgba(255,255,255,0.5); }
 .contact-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-.skills-tools-block { width: 100%; border-top: 1px solid rgba(46,64,144,0.1); padding-top: 40px; }
-.skills-tools-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 32px; }
-.skills-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px; }
+.skills-tools-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 28px; }
+.skills-tools-grid { display: flex; flex-direction: column; gap: 28px; }
 .st-group-label { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-weight: 600; margin-bottom: 14px; }
 .st-pills { display: flex; flex-wrap: wrap; gap: 10px; }
 .skill-tag-item { background: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 30px; color: var(--navy); font-weight: 500; padding: 8px 18px; font-size: 13px; box-shadow: 3px 5px 16px rgba(30,42,94,0.09); transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.2s; cursor: default; user-select: none; }
 .skill-tag-item.clickable { cursor: pointer; }
 .skill-tag-item:hover { background: rgba(255,255,255,0.99); transform: translateY(-3px); box-shadow: 5px 12px 28px rgba(30,42,94,0.16); }
+@media(max-width:780px){ .about-outer { grid-template-columns: 1fr; gap: 40px; } }
 
 #projects { flex-direction: column; }
 .projects-inner { max-width: 980px; width: 100%; }
@@ -312,7 +313,7 @@ html { scroll-behavior: smooth; }
     <div class="hero-text-col">
       <p class="hero-eyebrow">Instructional Designer &amp; Learning Experience Designer</p>
       <h1>Erica<br><em>(Yue) Shao</em></h1>
-      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; <a href="mailto:syue1@unc.edu" style="color:var(--muted);text-decoration:none;">syue1@unc.edu</a></p>
+      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection#ee9d979b8bdfae9b808dc08b8a9b" style="color:var(--muted);text-decoration:none;"><span class="__cf_email__" data-cfemail="3b48424e5e0a7b4e5558155e5f4e">[email&#160;protected]</span></a></p>
       <p class="hero-desc">I turn learning science into real experiences — designing curricula, prototyping interactive tools, and building systems that actually help people learn. Currently finishing my Master's at UNC Chapel Hill, and ready to bring that work somewhere it matters.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-solid" onclick="navTo('projects');return false;">View My Work</a>
@@ -325,30 +326,28 @@ html { scroll-behavior: smooth; }
 <section id="about">
   <div class="about-inner">
     <div class="about-outer reveal">
-      <div class="about-top">
-        <div class="about-left">
-          <p class="s-label">About Me</p>
-          <h2 class="s-title">Learning design that's<br><em>grounded in people</em></h2>
-          <p>I'm an instructional and learning experience designer who gets genuinely excited about the gap between how learning is designed and how it actually happens. My work sits at the intersection of learning science, UX, and educational technology — and most of it starts with a good needs analysis and ends with a prototype someone can actually use.</p>
-          <p>I've spent the past few years designing and redesigning learning experiences across contexts: K-12 classrooms in Shanghai, EdTech platforms, and graduate research at UNC Chapel Hill. What ties it all together is a belief that good design should be invisible — learners shouldn't notice the scaffolding, they should just feel more capable.</p>
-          <p>I'm currently looking for instructional designer or LXD roles at organizations that take learning seriously — whether that's an EdTech company, a university, or a corporate L&amp;D team building something worth building.</p>
-          <div class="contact-row">
-            <a href="/cdn-cgi/l/email-protection#ef9c969a8adeaf9a818cc18a8b9a" class="cpill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-              <span class="__cf_email__" data-cfemail="22515b57471362574c410c474657">[email&#160;protected]</span>
-            </a>
-            <a href="tel:9842916230" class="cpill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.17a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg>
-              (984) 291-6230
-            </a>
-            <span class="cpill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              Chapel Hill, NC
-            </span>
-          </div>
+      <div class="about-left">
+        <p class="s-label">About Me</p>
+        <h2 class="s-title">Learning design that's<br><em>grounded in people</em></h2>
+        <p>I'm an instructional and learning experience designer who gets genuinely excited about the gap between how learning is designed and how it actually happens. My work sits at the intersection of learning science, UX, and educational technology — and most of it starts with a good needs analysis and ends with a prototype someone can actually use.</p>
+        <p>I've spent the past few years designing and redesigning learning experiences across contexts: K-12 classrooms in Shanghai, EdTech platforms, and graduate research at UNC Chapel Hill. What ties it all together is a belief that good design should be invisible — learners shouldn't notice the scaffolding, they should just feel more capable.</p>
+        <p>I'm currently looking for instructional designer or LXD roles at organizations that take learning seriously — whether that's an EdTech company, a university, or a corporate L&amp;D team building something worth building.</p>
+        <div class="contact-row">
+          <a href="/cdn-cgi/l/email-protection#087b717d6d39487d666b266d6c7d" class="cpill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            <span class="__cf_email__" data-cfemail="b1c2c8c4d480f1c4dfd29fd4d5c4">[email&#160;protected]</span>
+          </a>
+          <a href="tel:9842916230" class="cpill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.06 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.17a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg>
+            (984) 291-6230
+          </a>
+          <span class="cpill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Chapel Hill, NC
+          </span>
         </div>
       </div>
-      <div class="skills-tools-block">
+      <div class="about-right">
         <h3 class="skills-tools-title">Skills &amp; Tools</h3>
         <div class="skills-tools-grid">
           <div>
@@ -398,6 +397,7 @@ html { scroll-behavior: smooth; }
             <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
             <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
             <span class="proj-skill-tag" data-skill="Prototyping">Prototyping</span>
+            <span class="proj-skill-tag" data-skill="UX Research">UX Research</span>
           </div>
           <div class="proj-footer">
             <span class="proj-status live">Live</span>
@@ -688,7 +688,7 @@ html { scroll-behavior: smooth; }
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -823,13 +823,4 @@ function showChronicle() {
   setTimeout(function(){overlay.classList.remove('active');},2200);
 }
 
-function showPortfolio() {
-  window._stopChronicleGlow();
-  document.getElementById('chronicle-root').style.display='none';
-  document.getElementById('portfolio-root').style.display='block';
-  window.scrollTo(0,0);
-  setTimeout(function(){var el=document.getElementById('projects');if(el)el.scrollIntoView({behavior:'smooth'});},50);
-}
-</script>
-</body>
-</html>
+function
