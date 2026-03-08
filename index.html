@@ -90,7 +90,7 @@ html { scroll-behavior: smooth; }
 
 #projects { flex-direction: column; }
 .projects-inner { max-width: 980px; width: 100%; }
-.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 8px; }
+.projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; margin-top: 8px; }
 .proj-card { background: var(--glass); border: 1px solid var(--glass-b); backdrop-filter: blur(12px); border-radius: 4px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; cursor: pointer; }
 .proj-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(20,35,90,0.14); }
 .proj-thumb { width: 100%; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 40px; font-style: italic; color: rgba(255,255,255,0.85); font-weight: 700; overflow: hidden; }
@@ -404,26 +404,20 @@ html { scroll-behavior: smooth; }
           </div>
         </div>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb t2">02</div>
-        <div class="proj-info">
-          <p class="proj-tag">Learning Analytics</p>
-          <h3>Project Title Here</h3>
-          <p>A brief description of your project — what problem it solved, who it was for, and what your role was in its creation.</p>
-          <div class="proj-footer">
-            <span class="proj-status">Coming Soon</span>
-            <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-          </div>
+      <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showAutoGen()">
+        <div class="proj-thumb t2" style="padding:0;overflow:hidden;">
+          <img src="image/huojianai.jpg" alt="Automation Assistant" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='02'">
         </div>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb t3">03</div>
         <div class="proj-info">
-          <p class="proj-tag">UX &amp; Curriculum Design</p>
-          <h3>Project Title Here</h3>
-          <p>A brief description of your project — what problem it solved, who it was for, and what your role was in its creation.</p>
+          <h3>Automation Assistant: AI Content Workflow</h3>
+          <p>Upload a screenshot of any lesson content — get a fully structured, ready-to-use table in seconds. Built on Coze; 5× faster content production.</p>
+          <div class="proj-tags-row">
+            <span class="proj-skill-tag" data-skill="Workflow Design">Workflow Design</span>
+            <span class="proj-skill-tag" data-skill="AI Tools">AI Tools</span>
+            <span class="proj-skill-tag" data-skill="Prototyping">Prototyping</span>
+          </div>
           <div class="proj-footer">
-            <span class="proj-status">Coming Soon</span>
+            <span class="proj-status live">Live</span>
             <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
           </div>
         </div>
@@ -568,10 +562,12 @@ html { scroll-behavior: smooth; }
 
 <div class="c-proj-hero">
   <div class="c-proj-hero-text">
+    <p class="c-eyebrow">Course Project · INLS 584</p>
     <h1>Chronicle:<br><em>Collaborative History Annotation</em></h1>
     <div class="c-tag-row">
-      <span class="c-tag">Learning Experience Design</span>
+      <span class="c-tag">Instructional Design</span>
       <span class="c-tag">AI &amp; EdTech</span>
+      <span class="c-tag">UX &amp; Prototyping</span>
     </div>
     <a href="https://chronicle-history-annotation-940148600018.us-west1.run.app/" target="_blank" rel="noopener" class="c-cta">
       Visit Live Site
@@ -680,9 +676,168 @@ html { scroll-behavior: smooth; }
 <footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
 </div>
 
-<div id="lightbox" onclick="closeLightbox()">
+
   <span id="lightbox-close">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ============ AUTOGEN ROOT ============ -->
+<div id="autogen-root" style="display:none;">
+<div id="autogen-glow"></div>
+<style>
+#autogen-glow {
+  position: fixed; top: 0; left: 0; width: 100px; height: 100px;
+  pointer-events: none; z-index: 999; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,140,240,0.26) 0%, rgba(122,184,232,0.14) 45%, transparent 72%);
+  transform: translate(-50%,-50%); transition: opacity 0.4s ease; mix-blend-mode: multiply; opacity: 0;
+}
+#autogen-root {
+  background: linear-gradient(160deg, #fdf0fc 0%, #eaf4fd 45%, #fdfbe8 100%);
+  min-height: 100vh; color: #2a1a3e;
+  font-family: 'DM Sans', sans-serif; font-weight: 300;
+}
+#autogen-root nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(255,252,255,0.88); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200,160,220,0.2);
+  display: flex; align-items: center; padding: 14px 48px; gap: 36px;
+}
+#autogen-root nav .nav-name { color: #9b59b6; font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; font-style:italic; cursor:pointer; display:flex; align-items:center; gap:6px; margin-right:auto; }
+#autogen-root nav .nav-back { text-decoration:none; color:#9b8aaa; font-size:12.5px; font-weight:500; letter-spacing:0.08em; display:flex; align-items:center; gap:7px; transition:color 0.3s; text-transform:uppercase; cursor:pointer; }
+#autogen-root nav .nav-back:hover { color:#9b59b6; }
+
+.ag-hero { max-width:1080px; margin:0 auto; padding:140px 80px 80px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.ag-hero-text .ag-eyebrow { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#c084e0; margin-bottom:16px; font-weight:600; }
+.ag-hero-text h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,60px); font-weight:700; line-height:1.05; margin-bottom:20px; color:#2a1a3e; }
+.ag-hero-text h1 em { font-style:italic; color:#7ab8e8; }
+.ag-tag-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+.ag-tag { background:rgba(154,93,201,0.1); border:1px solid rgba(154,93,201,0.25); border-radius:30px; padding:6px 16px; font-size:12px; font-weight:500; color:#7a3da0; }
+.ag-cta-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.ag-cta { display:inline-flex; align-items:center; gap:8px; background:#9b59b6; color:#fff; padding:13px 26px; border-radius:2px; font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; transition:background 0.3s; }
+.ag-cta:hover { background:#7d3f9a; }
+.ag-cta-note { font-size:12px; color:#a08ab8; font-style:italic; }
+.ag-hero-img { border-radius:8px; overflow:hidden; box-shadow:0 20px 56px rgba(100,60,150,0.15); background:linear-gradient(135deg,#f5d6f5,#d6eaf8,#fdf6d3); aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; }
+.ag-hero-img img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.ag-content { max-width:980px; margin:0 auto; padding:0 80px 120px; }
+.ag-section { padding:64px 0; }
+.ag-label { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:#c084e0; margin-bottom:12px; font-weight:600; }
+.ag-title { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,3vw,44px); font-weight:700; line-height:1.1; margin-bottom:28px; color:#2a1a3e; }
+.ag-title em { font-style:italic; color:#7ab8e8; }
+.ag-prose p { font-size:15px; line-height:1.85; color:#5a4a6e; margin-bottom:18px; }
+.ag-prose strong { color:#2a1a3e; font-weight:600; }
+.ag-divider { height:1px; background:linear-gradient(90deg,rgba(154,93,201,0.15),transparent); }
+
+.ag-workflow-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+.ag-workflow-card { border-radius:12px; padding:28px 24px 32px; position:relative; overflow:hidden; }
+.ag-workflow-card.c1 { background:linear-gradient(160deg,#f5d6f5,#e8c8f0); }
+.ag-workflow-card.c2 { background:linear-gradient(160deg,#d6eaf8,#bcd8f0); }
+.ag-workflow-card.c3 { background:linear-gradient(160deg,#fdfbe8,#f5f0c0); }
+.ag-workflow-card h4 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; margin-bottom:10px; color:#2a1a3e; }
+.ag-workflow-card p { font-size:13px; line-height:1.7; color:#5a4a6e; }
+.ag-workflow-num { position:absolute; top:16px; right:20px; font-family:'Cormorant Garamond',serif; font-size:42px; font-weight:700; font-style:italic; opacity:0.12; color:#2a1a3e; }
+
+#autogen-root footer { text-align:center; padding:32px; font-size:12.5px; color:#a08ab8; border-top:1px solid rgba(154,93,201,0.1); }
+</style>
+
+<nav>
+  <span class="nav-name" onclick="showPortfolio()">
+    Erica Shao <img src="image/flower.png" alt="" class="nav-flower" style="height:26px;width:26px;object-fit:contain;">
+  </span>
+  <span class="nav-back" onclick="showPortfolio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+    Back to Projects
+  </span>
+</nav>
+
+<div class="ag-hero">
+  <div class="ag-hero-text">
+    <p class="ag-eyebrow">Internship Project · Huojian AI Education</p>
+    <h1>Automation Assistant:<br><em>AI Content Workflow</em></h1>
+    <div class="ag-tag-row">
+      <span class="ag-tag">Workflow Design</span>
+      <span class="ag-tag">AI Tools</span>
+      <span class="ag-tag">EdTech</span>
+    </div>
+    <div class="ag-cta-row">
+      <a href="https://www.coze.cn/store/project/7522714120085798951?bid=6jb6v50d8201e&entity_id=1" target="_blank" rel="noopener" class="ag-cta">
+        Visit Site
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <span class="ag-cta-note">* Site is in Chinese &amp; may require login</span>
+    </div>
+  </div>
+  <div class="ag-hero-img">
+    <img src="image/huojianai.jpg" alt="Automation Assistant workflow interface" onerror="this.style.display='none'">
+  </div>
+</div>
+
+<div class="ag-content">
+  <div class="ag-section reveal">
+    <p class="ag-label">Overview</p>
+    <h2 class="ag-title">What It <em>Does</em></h2>
+    <div class="ag-prose">
+      <p>Teachers shouldn't have to retype what already exists. At Huojian AI Education, every content update meant manually transcribing vocabulary lists, grammar points, and lesson topics from textbook screenshots into spreadsheets — a slow, error-prone process repeated across 115 courses.</p>
+      <p>AutoGen eliminates that bottleneck entirely. Built on the Coze platform, it takes a screenshot as input and outputs a fully structured, ready-to-use content table — no reformatting, no retyping, no manual steps in between. The result: roughly a <strong>5× increase in content production efficiency</strong>, with fewer transcription errors and less downstream QA overhead.</p>
+    </div>
+    <!-- =====================================================
+         IMAGE PLACEHOLDER — Overview Screenshot
+         To insert: remove the comment tags and update the src.
+         <img src="image/huojianai.jpg" alt="AutoGen overview" style="width:100%;border-radius:8px;margin-top:32px;box-shadow:0 12px 40px rgba(100,60,150,0.1);">
+         ===================================================== -->
+  </div>
+  <div class="ag-divider"></div>
+  <div class="ag-section reveal">
+    <p class="ag-label">Design Decision</p>
+    <h2 class="ag-title">Why <em>This</em> Approach</h2>
+    <div class="ag-prose">
+      <p>The core question wasn't <strong>what tool to use</strong> — it was where the friction actually was. After observing the content production workflow, the pain point was clear: the gap between visual content (screenshots) and structured data (tables) was being bridged entirely by hand, every single time.</p>
+      <p>The decision to build an AI-powered automation workflow rather than improve a manual template came from one principle: <strong>if the information is already in the image, the system should be able to read it.</strong> Three separate workflows were designed to match the three most common teacher tasks — each scoped narrowly on purpose. A focused tool that does one thing reliably is more likely to actually get used than a complex system that tries to do everything.</p>
+    </div>
+  </div>
+  <div class="ag-divider"></div>
+  <div class="ag-section reveal">
+    <p class="ag-label">How It Works</p>
+    <h2 class="ag-title">Three <em>Workflows</em></h2>
+    <div class="ag-workflow-grid">
+      <div class="ag-workflow-card c1">
+        <span class="ag-workflow-num">01</span>
+        <h4>Word Generation</h4>
+        <p>Upload a vocabulary screenshot. The workflow parses each word, extracts definitions and usage, and populates a multi-dimensional vocabulary table automatically.</p>
+      </div>
+      <div class="ag-workflow-card c2">
+        <span class="ag-workflow-num">02</span>
+        <h4>Syntax Generation</h4>
+        <p>Upload a grammar knowledge slide. Image recognition identifies key rules and examples, outputting a structured grammar reference table ready for the course system.</p>
+      </div>
+      <div class="ag-workflow-card c3">
+        <span class="ag-workflow-num">03</span>
+        <h4>Text Topic Generation</h4>
+        <p>Upload a textbook page. The workflow extracts lesson topics and organizes them into a dimensional table — turning a page of text into navigable, structured content.</p>
+      </div>
+    </div>
+    <!-- workflow diagram -->
+    <img src="image/workflow.png" alt="AutoGen workflow diagram" style="width:100%;border-radius:10px;margin-top:32px;box-shadow:0 12px 40px rgba(100,60,150,0.08);">
+  </div>
+  <div class="ag-divider"></div>
+  <div class="ag-section reveal">
+    <p class="ag-label">Output Example</p>
+    <h2 class="ag-title">What <em>Comes Out</em></h2>
+    <div class="ag-prose">
+      <p>The Text Topic Generation workflow produces a fully structured fill-in-the-blank exercise table — complete with the original passage, blanked sentences with contextual hints, answer keys, and detailed grammar analysis. What used to take a teacher 20–30 minutes per unit now generates in seconds.</p>
+    </div>
+    <img src="image/huojianai.jpg" alt="AutoGen output example — generated exercise table" style="width:100%;border-radius:10px;margin-top:24px;box-shadow:0 12px 40px rgba(100,60,150,0.1);">
+  </div>
+  <div class="ag-divider"></div>
+  <div class="ag-section reveal">
+    <p class="ag-label">Outcome</p>
+    <h2 class="ag-title">The <em>Result</em></h2>
+    <div class="ag-prose">
+      <p>The three workflows together produced roughly a <strong>5× increase in content production efficiency</strong>. Beyond speed, fewer manual steps meant fewer transcription errors — which reduced downstream QA workload as well. The tool was integrated directly into the team's existing content pipeline at Huojian AI Education.</p>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -813,11 +968,50 @@ function showChronicle() {
   setTimeout(function(){overlay.classList.remove('active');},2200);
 }
 
+function showAutoGen() {
+  var overlay=document.getElementById('entrance-overlay');
+  overlay.classList.add('active');
+  setTimeout(function(){
+    document.getElementById('portfolio-root').style.display='none';
+    document.getElementById('chronicle-root').style.display='none';
+    document.getElementById('autogen-root').style.display='block';
+    window.scrollTo(0,0);
+    window._startAutoGenGlow();
+  },1200);
+  setTimeout(function(){overlay.classList.remove('active');},2200);
+}
+
 function showPortfolio() {
   window._stopChronicleGlow();
+  window._stopAutoGenGlow();
   document.getElementById('chronicle-root').style.display='none';
+  document.getElementById('autogen-root').style.display='none';
   document.getElementById('portfolio-root').style.display='block';
   window.scrollTo(0,0);
   setTimeout(function(){var el=document.getElementById('projects');if(el)el.scrollIntoView({behavior:'smooth'});},50);
 }
+// AutoGen glow
+(function() {
+  var agGlowEl = document.getElementById('autogen-glow');
+  var agX = window.innerWidth/2, agY = window.innerHeight/2;
+  var agCurX = agX, agCurY = agY;
+  var agRaf = null, isInAutoGen = false;
+  function animateAgGlow() {
+    agCurX += (agX - agCurX) * 0.1;
+    agCurY += (agY - agCurY) * 0.1;
+    agGlowEl.style.transform = 'translate(calc('+agCurX+'px - 50%),calc('+agCurY+'px - 50%))';
+    if (isInAutoGen) agRaf = requestAnimationFrame(animateAgGlow);
+  }
+  document.addEventListener('mousemove', function(e) { agX = e.clientX; agY = e.clientY; });
+  window._startAutoGenGlow = function() {
+    isInAutoGen = true; agGlowEl.style.opacity = '1';
+    agCurX = window.innerWidth/2; agCurY = window.innerHeight/2; agX = agCurX; agY = agCurY;
+    if (agRaf) cancelAnimationFrame(agRaf);
+    agRaf = requestAnimationFrame(animateAgGlow);
+  };
+  window._stopAutoGenGlow = function() {
+    isInAutoGen = false; agGlowEl.style.opacity = '0';
+    if (agRaf) { cancelAnimationFrame(agRaf); agRaf = null; }
+  };
+})();
 </script></body></html>
