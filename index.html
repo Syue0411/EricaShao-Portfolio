@@ -155,6 +155,7 @@ html { scroll-behavior: smooth; }
 .exp-body li { font-size: 13.5px; color: var(--muted); line-height: 1.7; padding-left: 16px; position: relative; }
 .exp-body li::before { content: '-'; position: absolute; left: 0; color: var(--rose); }
 .exp-divider { height: 1px; background: rgba(58,79,196,0.10); }
+.exp-download { margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(46,64,144,0.08); }
 
 #contact { flex-direction: column; }
 .contact-inner { max-width: 700px; width: 100%; }
@@ -311,7 +312,7 @@ html { scroll-behavior: smooth; }
     <div class="hero-text-col">
       <p class="hero-eyebrow">Instructional Designer &amp; Learning Experience Designer</p>
       <h1>Erica<br><em>(Yue) Shao</em></h1>
-      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="53202a26366213263d307d363726">[email&#160;protected]</a></p>
+      <p class="hero-sub">Chapel Hill, NC &nbsp;&middot;&nbsp; <a href="mailto:syue1@unc.edu" style="color:var(--muted);text-decoration:none;">syue1@unc.edu</a></p>
       <p class="hero-desc">I turn learning science into real experiences — designing curricula, prototyping interactive tools, and building systems that actually help people learn. Currently finishing my Master's at UNC Chapel Hill, and ready to bring that work somewhere it matters.</p>
       <div class="btn-row">
         <a href="#projects" class="btn btn-solid" onclick="navTo('projects');return false;">View My Work</a>
@@ -392,7 +393,7 @@ html { scroll-behavior: smooth; }
         </div>
         <div class="proj-info">
           <h3>Chronicle: Collaborative History Annotation</h3>
-          <p>A K–12 web platform that transforms passive history reading into collaborative inquiry — with peer annotation, AI-generated discussion summaries, an inline AI tutor, and an Era Chat feature where students converse with AI-powered historical figures.</p>
+          <p>A K–12 web platform that transforms passive history reading into collaborative inquiry by integrating peer annotation, AI-generated responses and summaries, an AI tutor, and an Era Chat feature that allows students to converse with AI-powered historical figures.</p>
           <div class="proj-tags-row">
             <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
             <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
@@ -433,7 +434,7 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<section id="education">
+<section id="education" style="display:none">
   <div class="edu-inner">
     <p class="s-label reveal">Education</p>
     <h2 class="s-title reveal">Academic<br><em>Background</em></h2>
@@ -457,14 +458,14 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" style="display:none">
   <div class="exp-inner">
     <div class="exp-title-row">
       <div>
         <p class="s-label reveal">Experience</p>
         <h2 class="s-title reveal">Internships &amp;<br><em>Projects</em></h2>
       </div>
-      <a href="CV_1_.pdf" download class="btn btn-ghost reveal">
+      <a href="resume.pdf" download class="btn btn-ghost reveal">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;vertical-align:middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Resume
       </a>
@@ -739,10 +740,16 @@ html { scroll-behavior: smooth; }
 })();
 
 function navTo(id, linkEl) {
-  var el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth'});
-  document.querySelectorAll('#portfolio-root nav a.nav-link').forEach(function(a){a.classList.remove('active');});
-  if(linkEl) linkEl.classList.add('active');
+  var hiddenSections = ['education', 'experience'];
+  // Show target if it's a hidden section, hide it if navigating away
+  hiddenSections.forEach(function(sid) {
+    var s = document.getElementById(sid);
+    if (s) s.style.display = (sid === id) ? 'flex' : 'none';
+  });
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  document.querySelectorAll('#portfolio-root nav a.nav-link').forEach(function(a) { a.classList.remove('active'); });
+  if (linkEl) linkEl.classList.add('active');
 }
 
 function initCarousels() {
