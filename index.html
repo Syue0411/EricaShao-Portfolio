@@ -737,15 +737,23 @@ html { scroll-behavior: smooth; }
   };
 })();
 
+function getOffsetTop(el) {
+  var top = 0;
+  while (el) { top += el.offsetTop; el = el.offsetParent; }
+  return top;
+}
+
 function navTo(id, linkEl) {
   var hiddenSections = ['education', 'experience'];
-  // Show target if it's a hidden section, hide it if navigating away
   hiddenSections.forEach(function(sid) {
     var s = document.getElementById(sid);
     if (s) s.style.display = (sid === id) ? 'flex' : 'none';
   });
   var el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  if (el) {
+    var top = getOffsetTop(el) - 70;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
   document.querySelectorAll('#portfolio-root nav a.nav-link').forEach(function(a) { a.classList.remove('active'); });
   if (linkEl) linkEl.classList.add('active');
 }
@@ -786,22 +794,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbo
 var _orig=window._startChronicleGlow;
 window._startChronicleGlow=function(){if(_orig)_orig();setTimeout(initCarousels,100);};
 
-document.addEventListener('click',function(e){
-  var tag=e.target.closest('.skill-tag-item.clickable');
-  if(!tag) return;
-  var skill=tag.getAttribute('data-skill');
-  var el=document.getElementById('projects');
-  if(!el) return;
-  el.scrollIntoView({behavior:'smooth'});
-  setTimeout(function(){
-    document.querySelectorAll('.proj-skill-tag[data-skill="'+skill+'"]').forEach(function(pt){
-      pt.classList.remove('flashing'); void pt.offsetWidth; pt.classList.add('flashing');
-      pt.addEventListener('animationend',function(){pt.classList.remove('flashing');},{once:true});
-      var card=pt.closest('.proj-card');
-      if(card){card.classList.remove('card-highlight');void card.offsetWidth;card.classList.add('card-highlight');setTimeout(function(){card.classList.remove('card-highlight');},1400);}
-    });
-  },750);
-});
+
 
 function showChronicle() {
   var overlay=document.getElementById('entrance-overlay');
@@ -822,4 +815,11 @@ function showChronicle() {
   setTimeout(function(){overlay.classList.remove('active');},2200);
 }
 
-function
+function showPortfolio() {
+  window._stopChronicleGlow();
+  document.getElementById('chronicle-root').style.display='none';
+  document.getElementById('portfolio-root').style.display='block';
+  window.scrollTo(0,0);
+  setTimeout(function(){var el=document.getElementById('projects');if(el)el.scrollIntoView({behavior:'smooth'});},50);
+}
+</script></body></html>
