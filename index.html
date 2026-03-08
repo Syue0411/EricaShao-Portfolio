@@ -677,6 +677,7 @@ html { scroll-behavior: smooth; }
 </div>
 
 
+<div id="lightbox" onclick="closeLightbox()">
   <span id="lightbox-close">&#x2715;</span>
   <img id="lightbox-img" src="" alt="">
 </div>
@@ -775,16 +776,11 @@ html { scroll-behavior: smooth; }
 <div class="ag-content">
   <div class="ag-section reveal">
     <p class="ag-label">Overview</p>
-    <h2 class="ag-title">What It <em>Does</em></h2>
+    <h2 class="ag-title">From Screenshot<br><em>to Structured Table — in Seconds</em></h2>
     <div class="ag-prose">
       <p>Teachers shouldn't have to retype what already exists. At Huojian AI Education, every content update meant manually transcribing vocabulary lists, grammar points, and lesson topics from textbook screenshots into spreadsheets — a slow, error-prone process repeated across 115 courses.</p>
-      <p>AutoGen eliminates that bottleneck entirely. Built on the Coze platform, it takes a screenshot as input and outputs a fully structured, ready-to-use content table — no reformatting, no retyping, no manual steps in between. The result: roughly a <strong>5× increase in content production efficiency</strong>, with fewer transcription errors and less downstream QA overhead.</p>
+      <p>This tool eliminates that bottleneck entirely. Built on the Coze platform, it takes a screenshot as input and outputs a fully structured, ready-to-use content table — no reformatting, no retyping, no manual steps in between. The result: roughly a <strong>5× increase in content production efficiency</strong>, with fewer transcription errors and less downstream QA overhead.</p>
     </div>
-    <!-- =====================================================
-         IMAGE PLACEHOLDER — Overview Screenshot
-         To insert: remove the comment tags and update the src.
-         <img src="image/huojianai.jpg" alt="AutoGen overview" style="width:100%;border-radius:8px;margin-top:32px;box-shadow:0 12px 40px rgba(100,60,150,0.1);">
-         ===================================================== -->
   </div>
   <div class="ag-divider"></div>
   <div class="ag-section reveal">
@@ -816,25 +812,8 @@ html { scroll-behavior: smooth; }
         <p>Upload a textbook page. The workflow extracts lesson topics and organizes them into a dimensional table — turning a page of text into navigable, structured content.</p>
       </div>
     </div>
-    <!-- workflow diagram -->
-    <img src="image/workflow.png" alt="AutoGen workflow diagram" style="width:100%;border-radius:10px;margin-top:32px;box-shadow:0 12px 40px rgba(100,60,150,0.08);">
-  </div>
-  <div class="ag-divider"></div>
-  <div class="ag-section reveal">
-    <p class="ag-label">Output Example</p>
-    <h2 class="ag-title">What <em>Comes Out</em></h2>
-    <div class="ag-prose">
-      <p>The Text Topic Generation workflow produces a fully structured fill-in-the-blank exercise table — complete with the original passage, blanked sentences with contextual hints, answer keys, and detailed grammar analysis. What used to take a teacher 20–30 minutes per unit now generates in seconds.</p>
-    </div>
-    <img src="image/huojianai.jpg" alt="AutoGen output example — generated exercise table" style="width:100%;border-radius:10px;margin-top:24px;box-shadow:0 12px 40px rgba(100,60,150,0.1);">
-  </div>
-  <div class="ag-divider"></div>
-  <div class="ag-section reveal">
-    <p class="ag-label">Outcome</p>
-    <h2 class="ag-title">The <em>Result</em></h2>
-    <div class="ag-prose">
-      <p>The three workflows together produced roughly a <strong>5× increase in content production efficiency</strong>. Beyond speed, fewer manual steps meant fewer transcription errors — which reduced downstream QA workload as well. The tool was integrated directly into the team's existing content pipeline at Huojian AI Education.</p>
-    </div>
+    <img src="image/workflow.png" alt="Automation Assistant workflow diagram" style="width:100%;border-radius:10px;margin-top:32px;box-shadow:0 12px 40px rgba(100,60,150,0.08);">
+    <img src="image/huojianai.jpg" alt="Automation Assistant output example" style="width:100%;border-radius:10px;margin-top:16px;box-shadow:0 12px 40px rgba(100,60,150,0.08);">
   </div>
 </div>
 <footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
@@ -850,7 +829,10 @@ html { scroll-behavior: smooth; }
   var secs = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', function() {
     var cur = '';
-    secs.forEach(function(s) { if (s.getBoundingClientRect().top <= 120) cur = s.id; });
+    secs.forEach(function(s) {
+      if (s.style.display === 'none') return;
+      if (s.getBoundingClientRect().top <= 120) cur = s.id;
+    });
     document.querySelectorAll('#portfolio-root nav a.nav-link').forEach(function(a) {
       a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
     });
