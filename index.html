@@ -1231,7 +1231,7 @@ html { scroll-behavior: smooth; }
 <div class="xj-hero">
   <div class="xj-hero-text">
     <p class="xj-eyebrow">Research Project · 2023–2024</p>
-    <h1>Women's Innovation &amp;<br>Entrepreneurship in <em>Xinjiang</em></h1>
+    <h1> <em>Women's</em> Innovation &amp;<br>Entrepreneurship in <em>Xinjiang</em></h1>
     <p class="xj-zh-subtitle"><strong>巾帼石榴花，乡村"她"力量</strong></p>
     <p class="xj-hero-sub">A practical research study on women's innovation and entrepreneurship in Heshuo County and Tumxuk City, Xinjiang — combining 264 surveys, government interviews, and four case studies — culminating in the design of <em>巾帼创梦 · SheRise</em>, a mobile learning app built for these women.</p>
     <div class="xj-tag-row">
@@ -1670,6 +1670,7 @@ function showXinjiang() {
     document.getElementById('autogen-root').style.display='none';
     document.getElementById('xinjiang-root').style.display='block';
     window.scrollTo(0,0);
+    window._startXinjiangGlow();
     document.querySelectorAll('#xinjiang-root .reveal').forEach(function(el){el.classList.remove('visible');});
     setTimeout(function(){
       var obs3=new IntersectionObserver(function(entries){
@@ -1684,6 +1685,7 @@ function showXinjiang() {
 function showPortfolio() {
   window._stopChronicleGlow();
   window._stopAutoGenGlow();
+  window._stopXinjiangGlow();
   document.getElementById('chronicle-root').style.display='none';
   document.getElementById('autogen-root').style.display='none';
   document.getElementById('xinjiang-root').style.display='none';
@@ -1715,7 +1717,31 @@ function showPortfolio() {
     if (agRaf) { cancelAnimationFrame(agRaf); agRaf = null; }
   };
 })();
-
+(function() {
+  var xjGlowEl = document.createElement('div');
+  xjGlowEl.id = 'xinjiang-glow';
+  xjGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:120px;height:120px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(184,58,42,0.22) 0%,rgba(200,146,42,0.12) 45%,transparent 72%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  document.body.appendChild(xjGlowEl);
+  var xjX=window.innerWidth/2, xjY=window.innerHeight/2;
+  var xjCurX=xjX, xjCurY=xjY;
+  var xjRaf=null, isInXj=false;
+  function animateXjGlow() {
+    xjCurX+=(xjX-xjCurX)*0.1; xjCurY+=(xjY-xjCurY)*0.1;
+    xjGlowEl.style.transform='translate(calc('+xjCurX+'px - 50%),calc('+xjCurY+'px - 50%))';
+    if(isInXj) xjRaf=requestAnimationFrame(animateXjGlow);
+  }
+  document.addEventListener('mousemove',function(e){xjX=e.clientX;xjY=e.clientY;});
+  window._startXinjiangGlow=function(){
+    isInXj=true; xjGlowEl.style.opacity='1';
+    xjCurX=window.innerWidth/2; xjCurY=window.innerHeight/2; xjX=xjCurX; xjY=xjCurY;
+    if(xjRaf) cancelAnimationFrame(xjRaf);
+    xjRaf=requestAnimationFrame(animateXjGlow);
+  };
+  window._stopXinjiangGlow=function(){
+    isInXj=false; xjGlowEl.style.opacity='0';
+    if(xjRaf){cancelAnimationFrame(xjRaf);xjRaf=null;}
+  };
+})();
 (function() {
   var u = 'syue1', d = 'unc.edu', e = u + '@' + d;
   var hero = document.getElementById('email-hero');
