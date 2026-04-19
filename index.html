@@ -553,7 +553,7 @@ html { scroll-behavior: smooth; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(18px, 2vw, 26px); font-style: italic; font-weight: 700;
   color: var(--xj-red); line-height: 1.3;
-  margin-bottom: 20px; margin-top: -8px; letter-spacing: 0.04em;
+  margin-bottom: 20px; margin-top: 18px; letter-spacing: 0.04em;
 }
 /* Hero image slot */
 .xj-hero-img-slot {
@@ -1265,11 +1265,11 @@ html { scroll-behavior: smooth; }
       <div class="xj-stat"><div class="xj-stat-num">10</div><div class="xj-stat-label">Team<br>Members</div></div>
     </div>
     <div class="xj-pdf-row">
-      <a href="report_cn.pdf" download class="xj-pdf-btn">
+      <a href="xinjiangreseach.pdf" download class="xj-pdf-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Report (Chinese 中文)
       </a>
-      <a href="report_en.pdf" download class="xj-pdf-btn xj-pdf-btn-outline">
+      <a href="xinjiangresearch_en.pdf" download class="xj-pdf-btn xj-pdf-btn-outline">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Report (English)
       </a>
@@ -1752,7 +1752,7 @@ function showPortfolio() {
 (function() {
   var xjGlowEl = document.createElement('div');
   xjGlowEl.id = 'xinjiang-glow';
-  xjGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:70px;height:70px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(184,58,42,0.55) 0%,rgba(200,146,42,0.30) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  xjGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:70px;height:70px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(184,58,42,0.30) 0%,rgba(200,146,42,0.15) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
   document.body.appendChild(xjGlowEl);
   var xjX=window.innerWidth/2, xjY=window.innerHeight/2;
   var xjCurX=xjX, xjCurY=xjY;
