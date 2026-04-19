@@ -553,7 +553,7 @@ html { scroll-behavior: smooth; }
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(18px, 2vw, 26px); font-style: italic; font-weight: 700;
   color: var(--xj-red); line-height: 1.3;
-  margin-bottom: 20px; margin-top: 18px; letter-spacing: 0.04em;
+  margin-bottom: 20px; margin-top: -8px; letter-spacing: 0.04em;
 }
 /* Hero image slot */
 .xj-hero-img-slot {
@@ -819,9 +819,10 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showXinjiang()">
-       <div class="proj-thumb" style="padding:0;overflow:hidden;">
-        <img src="image/project3cover.png" style="width:100%;height:100%;object-fit:cover;">
-       </div>
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#b83a2a 0%,#c8922a 55%,#7a2010 100%);position:relative;overflow:hidden;">
+          <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.16);letter-spacing:-0.02em;white-space:nowrap;text-align:center;line-height:1.2;">巾帼<br>石榴花</span>
+          <span style="position:absolute;bottom:16px;left:20px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600;">Field Research · Xinjiang</span>
+        </div>
         <div class="proj-info">
           <p class="proj-tag">Research Project</p>
           <h3>Women's Innovation &amp; Entrepreneurship in Xinjiang: Heshuo County &amp; Tumxuk City</h3>
@@ -834,6 +835,29 @@ html { scroll-behavior: smooth; }
           </div>
           <div class="proj-footer">
             <span class="proj-status live">Completed</span>
+            <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showLandforms()">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#2a4a3e 0%,#3d6b5a 40%,#4a7a6a 70%,#2c5a6e 100%);position:relative;overflow:hidden;">
+          <!-- 占位：替换为实际封面图 -->
+          <!-- <img src="image/landformscover.png" style="width:100%;height:100%;object-fit:cover;"> -->
+          <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.18);letter-spacing:-0.01em;white-space:nowrap;text-align:center;line-height:1.3;">Canyon<br>Volcano<br>Delta</span>
+          <span style="position:absolute;bottom:16px;left:20px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:600;">360° Immersive · VR/AR</span>
+        </div>
+        <div class="proj-info">
+          <p class="proj-tag">Course Project</p>
+          <h3>Exploring Landforms: Canyon, Volcano &amp; Delta</h3>
+          <p>A 360° immersive guided tour for upper-elementary students to explore canyons, volcanoes, and river deltas — combining interactive tagging, embedded videos, VR scenes, and in-tour quizzes.</p>
+          <div class="proj-tags-row">
+            <span class="proj-skill-tag" data-skill="Instructional Design">Instructional Design</span>
+            <span class="proj-skill-tag" data-skill="AR/VR Tools">AR/VR Tools</span>
+            <span class="proj-skill-tag" data-skill="Curriculum Development">Curriculum Development</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-status live">Live</span>
             <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
           </div>
         </div>
@@ -1264,11 +1288,11 @@ html { scroll-behavior: smooth; }
       <div class="xj-stat"><div class="xj-stat-num">10</div><div class="xj-stat-label">Team<br>Members</div></div>
     </div>
     <div class="xj-pdf-row">
-      <a href="xinjiangresearch.pdf" download class="xj-pdf-btn">
+      <a href="report_cn.pdf" download class="xj-pdf-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Report (Chinese 中文)
       </a>
-      <a href="xinjiangresearch_en.pdf" download class="xj-pdf-btn xj-pdf-btn-outline">
+      <a href="report_en.pdf" download class="xj-pdf-btn xj-pdf-btn-outline">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Report (English)
       </a>
@@ -1277,13 +1301,18 @@ html { scroll-behavior: smooth; }
   </div>
   <div class="xj-hero-vis">
     <div class="xj-hero-img-slot">
-      <img src="image/xinjiangcover.png" alt="Research cover — Women's Innovation & Entrepreneurship in Xinjiang">
+      <img src="image/project3cover.png" alt="Research cover — Women's Innovation & Entrepreneurship in Xinjiang">
     </div>
   </div>
 </div>
 
 <div class="xj-content">
   <div class="xj-section reveal" style="position:relative; overflow:hidden;">
+    <!-- 石榴花背景装饰：左下角只露出右上部分 -->
+    <img src="image/xinjianglogo.png" alt=""
+         style="position:absolute; bottom:-100px; left:-100px; width:360px;
+                opacity:0.10; pointer-events:none; z-index:0;
+                filter:sepia(0.3) saturate(1.2);">
     <div style="position:relative; z-index:1;">
     <p class="xj-label">Overview</p>
     <h2 class="xj-title">Why <em>This</em> Research</h2>
@@ -1537,6 +1566,392 @@ html { scroll-behavior: smooth; }
 <footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
 </div><!-- /xinjiang-root -->
 
+<!-- ============ LANDFORMS ROOT ============ -->
+<div id="landforms-root" style="display:none;">
+<style>
+:root {
+  --lf-green: #2d6a4f;
+  --lf-green-l: #52b788;
+  --lf-sky: #2c5f7a;
+  --lf-sky-l: #4a9aba;
+  --lf-earth: #6b4c11;
+  --lf-cream: #f4f7f2;
+  --lf-ink: #1a2e1f;
+  --lf-muted: #4a6358;
+  --lf-glass: rgba(240,248,244,0.35);
+  --lf-glass-b: rgba(200,230,215,0.5);
+}
+#landforms-root {
+  background-color: #f0f6f2;
+  background-image:
+    radial-gradient(ellipse 100% 50% at 50% -5%, rgba(44,95,122,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 95% 95%, rgba(45,106,79,0.10) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh; font-family: 'DM Sans', sans-serif; font-weight: 300;
+  color: var(--lf-ink); overflow-x: hidden;
+}
+#landforms-root::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--lf-green), var(--lf-sky), var(--lf-green));
+  z-index: 300; pointer-events: none;
+}
+#landforms-root nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(240,246,242,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(45,106,79,0.13);
+  display: flex; align-items: center; padding: 14px 48px; gap: 36px;
+}
+#landforms-root .lf-nav-name {
+  color: var(--lf-green); font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700; font-style: italic;
+  cursor: pointer; display: flex; align-items: center; gap: 6px; margin-right: auto;
+  text-decoration: none;
+}
+#landforms-root .lf-nav-back {
+  text-decoration: none; color: var(--lf-muted);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.09em;
+  display: flex; align-items: center; gap: 7px;
+  transition: color 0.3s; text-transform: uppercase; cursor: pointer;
+}
+#landforms-root .lf-nav-back:hover { color: var(--lf-green); }
+
+/* Hero */
+.lf-hero {
+  max-width: 1100px; margin: 0 auto;
+  padding: 140px 80px 80px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+}
+@keyframes lfUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+.lf-hero-text { animation: lfUp 0.85s ease both; }
+.lf-hero-vis  { animation: lfUp 0.95s ease 0.1s both; }
+.lf-eyebrow {
+  font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--lf-sky); margin-bottom: 18px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+}
+.lf-eyebrow::before {
+  content: ''; display: inline-block; width: 26px; height: 1px;
+  background: var(--lf-sky); opacity: 0.7;
+}
+.lf-hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.2vw, 52px);
+  font-weight: 700; line-height: 1.08; margin-bottom: 10px; color: var(--lf-ink);
+}
+.lf-hero-text h1 em { font-style: italic; color: var(--lf-green); font-weight: 700; }
+.lf-hero-sub {
+  font-size: 14px; color: var(--lf-muted); line-height: 1.75;
+  margin-bottom: 28px; max-width: 420px;
+}
+.lf-tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.lf-tag {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; padding: 6px 16px; border-radius: 20px;
+  border: 1px solid rgba(45,106,79,0.25); color: var(--lf-green);
+  background: rgba(45,106,79,0.05);
+}
+.lf-cta {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px;
+  background: var(--lf-green); color: #fff; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  border-radius: 4px; transition: background 0.3s;
+}
+.lf-cta:hover { background: var(--lf-sky); }
+
+/* Hero image slot — 占位 */
+.lf-hero-img-slot {
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 28px 60px rgba(44,95,122,0.18), 0 0 0 1px rgba(45,106,79,0.2);
+  aspect-ratio: 16/10; position: relative;
+  background: linear-gradient(135deg, #2a4a3e, #3d6b5a, #2c5f7a);
+}
+.lf-hero-img-slot > img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.lf-hero-img-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; color: rgba(255,255,255,0.5); font-size: 12px; text-align: center;
+}
+.lf-hero-img-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(20,40,30,0.7), transparent);
+  padding: 20px 20px 14px; font-size: 10.5px; color: rgba(255,255,255,0.7);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* Content */
+.lf-content { max-width: 1000px; margin: 0 auto; padding: 0 80px 120px; }
+.lf-section { margin-bottom: 60px; width: 100%; }
+.lf-divider {
+  height: 1px;
+  background: linear-gradient(to right, rgba(45,106,79,0.2), rgba(44,95,122,0.15), transparent);
+  margin-bottom: 60px;
+}
+.lf-label {
+  font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--lf-sky); margin-bottom: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+}
+.lf-label::before {
+  content: ''; display: inline-block; width: 20px; height: 1px;
+  background: var(--lf-sky); opacity: 0.7;
+}
+.lf-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2.8vw, 40px); font-weight: 700;
+  line-height: 1.1; margin-bottom: 26px; color: var(--lf-ink);
+}
+.lf-title em { font-style: italic; color: var(--lf-green); }
+.lf-prose { font-size: 14.5px; line-height: 1.9; color: var(--lf-muted); }
+.lf-prose p { margin-bottom: 15px; }
+.lf-prose strong { color: var(--lf-ink); font-weight: 600; }
+
+/* Landform cards — 3 modules */
+.lf-module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+.lf-module-card {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--lf-glass-b);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.lf-module-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(44,95,122,0.12); }
+.lf-module-img {
+  width: 100%; aspect-ratio: 4/3; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 28px;
+  font-style: italic; font-weight: 700; color: rgba(255,255,255,0.7);
+}
+/* 占位：替换 img 后自动显示图片 */
+.lf-module-img img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.lf-module-img.canyon-bg { background: linear-gradient(160deg, #8b5e3c, #c4874a, #6b3a1f); }
+.lf-module-img.volcano-bg { background: linear-gradient(160deg, #7a1f1f, #c0392b, #4a0f0f); }
+.lf-module-img.delta-bg { background: linear-gradient(160deg, #1a5c7a, #2980b9, #0d3d52); }
+.lf-module-body {
+  background: rgba(255,255,255,0.7); padding: 20px 22px 24px;
+}
+.lf-module-num {
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--lf-sky); font-weight: 600; margin-bottom: 6px;
+}
+.lf-module-body h4 {
+  font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700;
+  color: var(--lf-ink); margin-bottom: 8px;
+}
+.lf-module-body p { font-size: 13px; line-height: 1.72; color: var(--lf-muted); }
+
+/* Objectives */
+.lf-objectives { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.lf-objective {
+  display: grid; grid-template-columns: 32px 1fr; gap: 14px; align-items: start;
+  background: rgba(255,255,255,0.65); border: 1px solid var(--lf-glass-b);
+  border-radius: 14px; padding: 16px 20px;
+  transition: transform 0.2s ease;
+}
+.lf-objective:hover { transform: translateX(4px); }
+.lf-obj-letter {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--lf-green), var(--lf-sky));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.lf-objective p { font-size: 13.5px; line-height: 1.7; color: var(--lf-muted); margin: 0; padding-top: 4px; }
+
+/* Tools table */
+.lf-tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; }
+.lf-tool-card {
+  background: rgba(255,255,255,0.65); border: 1px solid var(--lf-glass-b);
+  border-left: 3px solid var(--lf-green);
+  border-radius: 12px; padding: 16px 18px;
+}
+.lf-tool-card h5 {
+  font-size: 13.5px; font-weight: 600; color: var(--lf-ink); margin-bottom: 4px;
+}
+.lf-tool-card p { font-size: 12.5px; line-height: 1.65; color: var(--lf-muted); }
+.lf-tool-card a { color: var(--lf-sky); font-size: 11px; text-decoration: none; }
+.lf-tool-card a:hover { text-decoration: underline; }
+
+/* Screenshots — 占位图区域 */
+.lf-screenshots { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; width: 100%; }
+.lf-screenshot-slot {
+  border-radius: 12px; overflow: hidden; aspect-ratio: 16/10; position: relative;
+  background: linear-gradient(135deg, #d4e8de, #c8dde8);
+  border: 1px solid var(--lf-glass-b);
+  box-shadow: 0 6px 20px rgba(44,95,122,0.08);
+  cursor: pointer; transition: transform 0.2s ease;
+  display: flex; align-items: center; justify-content: center;
+}
+.lf-screenshot-slot:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(44,95,122,0.12); }
+.lf-screenshot-slot > img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.lf-screenshot-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; color: var(--lf-muted); font-size: 11.5px; text-align: center; padding: 16px;
+}
+.lf-screenshot-label { margin-top: 10px; font-size: 13px; color: var(--lf-muted); line-height: 1.5; }
+.lf-screenshot-label strong { display: block; color: var(--lf-ink); font-size: 13.5px; margin-bottom: 3px; }
+
+/* Rubric */
+.lf-rubric { width: 100%; border-collapse: collapse; font-size: 13px; }
+.lf-rubric th {
+  background: var(--lf-green); color: #fff; padding: 10px 14px;
+  text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: 0.05em;
+}
+.lf-rubric td {
+  padding: 10px 14px; border-bottom: 1px solid rgba(45,106,79,0.1);
+  color: var(--lf-muted); vertical-align: top; line-height: 1.6;
+}
+.lf-rubric tr:nth-child(even) td { background: rgba(45,106,79,0.04); }
+.lf-rubric td:first-child { font-weight: 600; color: var(--lf-ink); }
+
+#landforms-root footer {
+  text-align: center; padding: 36px; font-size: 11.5px;
+  color: rgba(74,99,88,0.5); letter-spacing: 0.08em;
+  border-top: 1px solid rgba(45,106,79,0.1);
+}
+@media(max-width:800px) {
+  .lf-hero { grid-template-columns: 1fr; gap: 36px; padding: 120px 24px 60px; }
+  .lf-content { padding: 0 24px 80px; }
+  .lf-module-grid { grid-template-columns: 1fr; }
+  .lf-tools-grid { grid-template-columns: 1fr; }
+  .lf-screenshots { grid-template-columns: 1fr; }
+  #landforms-root nav { padding: 12px 20px; }
+}
+</style>
+
+<nav>
+  <span class="lf-nav-name" onclick="showPortfolio()">
+    Erica Shao <img src="image/flower.png" alt="" class="nav-flower" style="height:26px;width:26px;object-fit:contain;filter:hue-rotate(120deg);">
+  </span>
+  <span class="lf-nav-back" onclick="showPortfolio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+    Back to Projects
+  </span>
+</nav>
+
+<div class="lf-hero">
+  <div class="lf-hero-text">
+    <p class="lf-eyebrow">Course Project · EDUC 767</p>
+    <h1>Exploring Landforms:<br><em>Canyon, Volcano &amp; Delta</em></h1>
+    <p class="lf-hero-sub">A 360° immersive guided tour for upper-elementary students — combining interactive tagging, embedded videos, VR scenes via FrameVR, and in-tour quizzes to explore three major landforms.</p>
+    <div class="lf-tag-row">
+      <span class="lf-tag">Immersive Learning</span>
+      <span class="lf-tag">VR / AR</span>
+      <span class="lf-tag">K–12</span>
+    </div>
+    <a href="https://schools.360cities.net/guided-tour/v7BO2w5TPlWrdHa8NRLNjg/exploring-landforms-canyon-volcano-and-delta" target="_blank" rel="noopener" class="lf-cta">
+      Visit Live Tour
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+  <div class="lf-hero-vis">
+    <div class="lf-hero-img-slot">
+      <!-- 占位：把封面图命名为 image/landformscover.png 即可显示 -->
+      <img src="image/landformscover.png" alt="Landforms 360 Tour"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="lf-hero-img-placeholder">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span>image/landformscover.png</span>
+      </div>
+      <div class="lf-hero-img-label">360° Guided Tour · 360Cities Schools</div>
+    </div>
+  </div>
+</div>
+
+<div class="lf-content">
+
+  <div class="lf-section reveal">
+    <p class="lf-label">Overview</p>
+    <h2 class="lf-title">What This <em>Tour</em> Does</h2>
+    <div class="lf-prose">
+      <p>Students typically struggle to visualize large-scale landforms from textbooks and flat images. This lesson places them <strong>inside</strong> the landscape — exploring 360° panoramas of real canyons, volcanoes, and river deltas, with teacher-created annotation tags that guide their attention to key structural features.</p>
+      <p>Each module combines <strong>a formation overview, an immersive panorama, embedded educational videos, and a short quiz</strong>. The volcano module adds an extra dimension: a <strong>FrameVR interactive room</strong> with 3D models of internal volcanic structures, bridging immersive and spatial learning.</p>
+      <p>Students close the lesson by creating their own annotated panorama — transferring content knowledge into an original digital artifact.</p>
+    </div>
+  </div>
+
+  <div class="lf-divider"></div>
+
+  <div class="lf-section reveal">
+    <p class="lf-label">Learning Objectives</p>
+    <h2 class="lf-title">What Students <em>Learn</em></h2>
+    <div class="lf-objectives">
+      <div class="lf-objective">
+        <div class="lf-obj-letter">A</div>
+        <p>Identify three landforms — canyon, volcano, and delta — and recognize their major structural components.</p>
+      </div>
+      <div class="lf-objective">
+        <div class="lf-obj-letter">B</div>
+        <p>Explain the basic formation process of each landform using correct scientific vocabulary.</p>
+      </div>
+      <div class="lf-objective">
+        <div class="lf-obj-letter">C</div>
+        <p>Evaluate key environmental and geological factors — water flow, sediment movement, tectonic activity — that shape different landforms.</p>
+      </div>
+      <div class="lf-objective">
+        <div class="lf-obj-letter">D</div>
+        <p>Create an annotated 360° panorama with 3–5 tags, accurately labeling structural features and explaining their significance.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lf-divider"></div>
+
+  <div class="lf-section reveal">
+    <p class="lf-label">Screenshots</p>
+    <h2 class="lf-title">Tour in <em>Action</em></h2>
+    <div class="lf-screenshots" style="grid-template-columns:repeat(2,1fr);">
+      <div>
+        <div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Tour overview')">
+          <img src="image/lf_screen1.png" alt="Tour overview" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="lf-screenshot-ph">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.35"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>image/lf_screen1.png</span>
+          </div>
+        </div>
+        <div class="lf-screenshot-label"><strong>360° Panorama View</strong>Tour interface with interactive annotation tags overlaid on the panorama.</div>
+      </div>
+      <div>
+        <div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'VR volcano room')">
+          <img src="image/lf_screen2.png" alt="VR volcano room" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="lf-screenshot-ph">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.35"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>image/lf_screen2.png</span>
+          </div>
+        </div>
+        <div class="lf-screenshot-label"><strong>FrameVR Volcano Room</strong>Immersive 3D space with internal volcanic structure models.</div>
+      </div>
+      <div>
+        <div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'In-tour quiz')">
+          <img src="image/lf_screen3.png" alt="In-tour quiz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="lf-screenshot-ph">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.35"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>image/lf_screen3.png</span>
+          </div>
+        </div>
+        <div class="lf-screenshot-label"><strong>In-Tour Quiz</strong>Short comprehension checks embedded at the end of each landform module.</div>
+      </div>
+      <div>
+        <div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Educational video')">
+          <img src="image/lf_screen4.png" alt="Educational video" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="lf-screenshot-ph">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.35"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span>image/lf_screen4.png</span>
+          </div>
+        </div>
+        <div class="lf-screenshot-label"><strong>Educational Video</strong>Short videos embedded within each module to deepen understanding of formation processes.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
+</div><!-- /landforms-root -->
+
 <script>
 (function() {
   var obs = new IntersectionObserver(function(entries) {
@@ -1681,6 +2096,30 @@ function showAutoGen() {
   setTimeout(function(){overlay.classList.remove('active');},2200);
 }
 
+function showLandforms() {
+  var overlay=document.getElementById('entrance-overlay');
+  var eoTitle=overlay.querySelector('.eo-title');
+  if(eoTitle) eoTitle.textContent='Exploring Landforms';
+  overlay.classList.add('active');
+  setTimeout(function(){
+    document.getElementById('portfolio-root').style.display='none';
+    document.getElementById('chronicle-root').style.display='none';
+    document.getElementById('autogen-root').style.display='none';
+    document.getElementById('xinjiang-root').style.display='none';
+    document.getElementById('landforms-root').style.display='block';
+    window.scrollTo(0,0);
+    window._startLandformsGlow();
+    document.querySelectorAll('#landforms-root .reveal').forEach(function(el){el.classList.remove('visible');});
+    setTimeout(function(){
+      var obs4=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs4.unobserve(e.target);}});
+      },{threshold:0.08});
+      document.querySelectorAll('#landforms-root .reveal').forEach(function(el){obs4.observe(el);});
+    },100);
+  },1200);
+  setTimeout(function(){overlay.classList.remove('active');},2200);
+}
+
 function showXinjiang() {
   var overlay=document.getElementById('entrance-overlay');
   var eoTitle=overlay.querySelector('.eo-title');
@@ -1709,11 +2148,13 @@ function showPortfolio() {
   window._stopChronicleGlow();
   window._stopAutoGenGlow();
   window._stopXinjiangGlow();
+  window._stopLandformsGlow();
   var deco = document.getElementById('xj-pomegranate-deco');
   if(deco) deco.style.display='none';
   document.getElementById('chronicle-root').style.display='none';
   document.getElementById('autogen-root').style.display='none';
   document.getElementById('xinjiang-root').style.display='none';
+  document.getElementById('landforms-root').style.display='none';
   document.getElementById('portfolio-root').style.display='block';
   window.scrollTo(0,0);
   setTimeout(function(){var el=document.getElementById('projects');if(el)el.scrollIntoView({behavior:'smooth'});},50);
@@ -1746,7 +2187,7 @@ function showPortfolio() {
 (function() {
   var xjGlowEl = document.createElement('div');
   xjGlowEl.id = 'xinjiang-glow';
-  xjGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:70px;height:70px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(184,58,42,0.30) 0%,rgba(200,146,42,0.15) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  xjGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:70px;height:70px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(184,58,42,0.55) 0%,rgba(200,146,42,0.30) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
   document.body.appendChild(xjGlowEl);
   var xjX=window.innerWidth/2, xjY=window.innerHeight/2;
   var xjCurX=xjX, xjCurY=xjY;
@@ -1766,6 +2207,32 @@ function showPortfolio() {
   window._stopXinjiangGlow=function(){
     isInXj=false; xjGlowEl.style.opacity='0';
     if(xjRaf){cancelAnimationFrame(xjRaf);xjRaf=null;}
+  };
+})();
+
+(function() {
+  var lfGlowEl = document.createElement('div');
+  lfGlowEl.id = 'landforms-glow';
+  lfGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:70px;height:70px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(45,106,79,0.45) 0%,rgba(44,95,122,0.25) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  document.body.appendChild(lfGlowEl);
+  var lfX=window.innerWidth/2, lfY=window.innerHeight/2;
+  var lfCurX=lfX, lfCurY=lfY;
+  var lfRaf=null, isInLf=false;
+  function animateLfGlow() {
+    lfCurX+=(lfX-lfCurX)*0.1; lfCurY+=(lfY-lfCurY)*0.1;
+    lfGlowEl.style.transform='translate(calc('+lfCurX+'px - 50%),calc('+lfCurY+'px - 50%))';
+    if(isInLf) lfRaf=requestAnimationFrame(animateLfGlow);
+  }
+  document.addEventListener('mousemove',function(e){lfX=e.clientX;lfY=e.clientY;});
+  window._startLandformsGlow=function(){
+    isInLf=true; lfGlowEl.style.opacity='1';
+    lfCurX=window.innerWidth/2; lfCurY=window.innerHeight/2; lfX=lfCurX; lfY=lfCurY;
+    if(lfRaf) cancelAnimationFrame(lfRaf);
+    lfRaf=requestAnimationFrame(animateLfGlow);
+  };
+  window._stopLandformsGlow=function(){
+    isInLf=false; lfGlowEl.style.opacity='0';
+    if(lfRaf){cancelAnimationFrame(lfRaf);lfRaf=null;}
   };
 })();
 
