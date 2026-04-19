@@ -1264,16 +1264,22 @@ html { scroll-behavior: smooth; }
 </div>
 
 <div class="xj-content">
-  <div class="xj-section reveal">
-    <p class="xj-label">Overview</p>
-    <h2 class="xj-title">Why <em>This</em> Research</h2>
-    <div class="xj-prose">
-      <p>China's Rural Revitalization Strategy places women at the center of agricultural modernization. As urbanization has reshaped the countryside, rural women — particularly in Xinjiang — have become the primary resident population of many villages, yet their entrepreneurial potential remains underutilized.</p>
-      <p>A cross-ethnic team of Han and minority students conducted practical research across two sites — <strong>Heshuo County (Tachaqir Town)</strong> and <strong>Tumxuk City</strong>, Xinjiang — asking one core question: what actually prevents rural women from innovating and starting businesses, and what makes success possible?</p>
-    </div>
-    <div style="margin-top:28px;">
-      <div class="xj-team-note">
-        A collaborative team of Han and minority students from Shanghai Normal University, united by a shared commitment to women's entrepreneurship and rural revitalization.
+  <div class="xj-section reveal" style="position:relative; overflow:hidden;">
+    <img src="image/xinjianglogo.png" alt=""
+         style="position:absolute; bottom:-100px; left:-100px; width:360px;
+                opacity:0.10; pointer-events:none; z-index:0;
+                filter:sepia(0.3) saturate(1.2);">
+    <div style="position:relative; z-index:1;">
+      <p class="xj-label">Overview</p>
+      <h2 class="xj-title">Why <em>This</em> Research</h2>
+      <div class="xj-prose">
+        <p>China's Rural Revitalization Strategy places women at the center of agricultural modernization. As urbanization has reshaped the countryside, rural women — particularly in Xinjiang — have become the primary resident population of many villages, yet their entrepreneurial potential remains underutilized.</p>
+        <p>A cross-ethnic team of Han and minority students conducted practical research across two sites — <strong>Heshuo County (Tachaqir Town)</strong> and <strong>Tumxuk City</strong>, Xinjiang — asking one core question: what actually prevents rural women from innovating and starting businesses, and what makes success possible?</p>
+      </div>
+      <div style="margin-top:28px;">
+        <div class="xj-team-note">
+          A collaborative team of Han and minority students from Shanghai Normal University, united by a shared commitment to women's entrepreneurship and rural revitalization.
+        </div>
       </div>
     </div>
   </div>
@@ -1482,33 +1488,33 @@ html { scroll-behavior: smooth; }
     </div>
 
     <!-- FIX: gallery images with object-position to avoid right-side watermark -->
-    <div class="xj-app-gallery">
-      <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')">
-        <img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="xj-gallery-ph" style="display:none;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>image/xinjiangapp1.jpg</span>
-        </div>
+   <div class="xj-app-gallery">
+  <div class="xj-gallery-col-left">
+    <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')">
+      <img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="xj-gallery-ph" style="display:none;">
+        <span>image/xinjiangapp1.jpg</span>
       </div>
-      <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')">
-        <img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="xj-gallery-ph" style="display:none;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>image/xinjiangapp2.jpg</span>
-        </div>
-      </div>
-      <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')">
-        <img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="xj-gallery-ph" style="display:none;">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="opacity:0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>image/xinjiangapp3.jpg</span>
-        </div>
+    </div>
+    <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')">
+      <img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="xj-gallery-ph" style="display:none;">
+        <span>image/xinjiangapp2.jpg</span>
       </div>
     </div>
   </div>
+  <div class="xj-gallery-col-right">
+    <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')">
+      <img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="xj-gallery-ph" style="display:none;">
+        <span>image/xinjiangapp3.jpg</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
 
