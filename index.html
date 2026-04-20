@@ -870,17 +870,20 @@ html { scroll-behavior: smooth; }
 /* Screenshot placeholders */
 .dr-screenshots { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; width: 100%; }
 .dr-screenshot-slot {
-  border-radius: 12px; overflow: hidden; position: relative;
+  border-radius: 12px; overflow: hidden;
   background: linear-gradient(135deg, #e8e0ff, #d4e4f8);
   border: 1px solid rgba(124,58,237,0.15);
   box-shadow: 0 6px 20px rgba(124,58,237,0.08);
-  display: flex; align-items: center; justify-content: center;
-  min-height: 120px;
+  min-height: 80px;
 }
 .dr-screenshot-slot > img { width: 100%; height: auto; display: block; }
+.dr-screenshot-slot .dr-screenshot-ph {
+  min-height: 120px;
+}
 .dr-screenshot-ph {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 8px; color: rgba(124,58,237,0.5); font-size: 11.5px; text-align: center; padding: 16px;
+  gap: 8px; color: rgba(124,58,237,0.5); font-size: 11.5px; text-align: center; padding: 32px 16px;
+  width: 100%; box-sizing: border-box;
 }
 .dr-screenshot-label { margin-top: 10px; font-size: 13px; color: var(--dr-muted); line-height: 1.5; }
 .dr-screenshot-label strong { display: block; color: var(--dr-ink); font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
@@ -1112,7 +1115,7 @@ html { scroll-behavior: smooth; }
       <!-- PROJECT 5: DiscussReady — full width -->
       <div class="proj-card reveal" style="grid-column: 1 / -1;" onclick="if(!event.target.classList.contains('proj-skill-tag'))showDiscussReady()">
         <div class="proj-thumb t5" style="aspect-ratio:21/9; padding:0; overflow:hidden; position:relative;">
-          <img src="image/discussreadycover.png" alt="DiscussReady" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/discussreadycover.png" alt="DiscussReady" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/discussreadycover.png</span>
@@ -1645,7 +1648,7 @@ html { scroll-behavior: smooth; }
       <div class="xj-mini-left">
         <div class="xj-mini-header">
           <div class="xj-mini-icon" id="app-icon-slot">
-            <img src="image/appicon.jpg" alt="SheRise App Icon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="image/appicon.jpg" alt="SheRise App Icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:22px;">🌸</div>
           </div>
           <div class="xj-mini-icon-label">
@@ -1673,11 +1676,11 @@ html { scroll-behavior: smooth; }
     </div>
     <div class="xj-app-gallery">
       <div class="xj-gallery-col-left">
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')"><img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp1.jpg</span></div></div>
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')"><img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp2.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')"><img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp1.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')"><img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp2.jpg</span></div></div>
       </div>
       <div class="xj-gallery-col-right">
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')"><img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp3.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')"><img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp3.jpg</span></div></div>
       </div>
     </div>
   </div>
@@ -1753,7 +1756,7 @@ html { scroll-behavior: smooth; }
     <a href="https://schools.360cities.net/guided-tour/v7BO2w5TPlWrdHa8NRLNjg/exploring-landforms-canyon-volcano-and-delta" target="_blank" rel="noopener" class="lf-cta">Visit Live Tour <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
   </div>
   <div class="lf-hero-vis">
-    <div class="lf-hero-img-slot"><img src="image/lfcover2.png" alt="Landforms 360 Tour" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="lf-hero-img-placeholder"></div></div>
+    <div class="lf-hero-img-slot"><img src="image/lfcover2.png" alt="Landforms 360 Tour" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="lf-hero-img-placeholder"></div></div>
   </div>
 </div>
 <div class="lf-content">
@@ -1778,10 +1781,10 @@ html { scroll-behavior: smooth; }
     <p class="lf-label">Screenshots</p>
     <h2 class="lf-title">Tour in <em>Action</em></h2>
     <div class="lf-screenshots" style="grid-template-columns:repeat(2,1fr);">
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Tour overview')"><img src="image/lf_screen1.png" alt="Tour overview" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></div><div class="lf-screenshot-label"><strong>360° Panorama View</strong>Tour interface with interactive annotation tags overlaid on the panorama.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'VR volcano room')"><img src="image/lf_screen2.png" alt="VR volcano room" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></div><div class="lf-screenshot-label"><strong>FrameVR Volcano Room</strong>Immersive 3D space with internal volcanic structure models.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'In-tour quiz')"><img src="image/lf_screen3.png" alt="In-tour quiz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></div><div class="lf-screenshot-label"><strong>In-Tour Quiz</strong>Short comprehension checks embedded at the end of each landform module.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Educational video')"><img src="image/lf_screen4.png" alt="Educational video" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></div><div class="lf-screenshot-label"><strong>Educational Video</strong>Short videos embedded within each module to deepen understanding of formation processes.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Tour overview')"><img src="image/lf_screen1.png" alt="Tour overview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>360° Panorama View</strong>Tour interface with interactive annotation tags overlaid on the panorama.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'VR volcano room')"><img src="image/lf_screen2.png" alt="VR volcano room" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>FrameVR Volcano Room</strong>Immersive 3D space with internal volcanic structure models.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'In-tour quiz')"><img src="image/lf_screen3.png" alt="In-tour quiz" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>In-Tour Quiz</strong>Short comprehension checks embedded at the end of each landform module.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Educational video')"><img src="image/lf_screen4.png" alt="Educational video" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>Educational Video</strong>Short videos embedded within each module to deepen understanding of formation processes.</div></div>
     </div>
   </div>
 </div>
@@ -1804,7 +1807,7 @@ html { scroll-behavior: smooth; }
 <div class="dr-hero">
   <div class="dr-hero-text">
     <p class="dr-eyebrow">Course Project · 2026</p>
-    <h1><span style="display:inline-flex;align-items:center;gap:10px;"><img src="image/discussreadyicon.png" alt="DiscussReady" style="height:44px;width:44px;object-fit:cover;border-radius:10px;vertical-align:middle;flex-shrink:0;" onerror="this.style.display='none'"><em>DiscussReady:</em></span><br>AI Discussion Coaching</h1>
+    <h1 style="line-height:1.08;"><span style="display:inline-flex;align-items:center;gap:10px;"><img src="image/discussreadyicon.png" alt="DiscussReady" style="height:36px;width:36px;object-fit:cover;border-radius:8px;flex-shrink:0;vertical-align:middle;" onerror="this.style.display='none'"><em>DiscussReady:</em></span><br><span style="padding-left:0;">AI Discussion Coaching</span></h1>
     <p class="dr-hero-sub">A web app that helps international students prepare for high-stakes classroom discussions — guiding them from passive reading to confident, interactive participation through structured AI coaching, script scaffolds, and voice rehearsal.</p>
     <div class="dr-tag-row">
       <span class="dr-tag">Prototyping</span>
@@ -1822,7 +1825,7 @@ html { scroll-behavior: smooth; }
   <div class="dr-hero-vis">
     <!-- Cover image placeholder — replace src with image/discussreadycover.png once in image/ folder -->
     <div class="dr-hero-img-slot" style="position:relative;">
-      <img src="image/discussreadycover.png" alt="DiscussReady cover" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;border-radius:16px;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="image/discussreadycover.png" alt="DiscussReady cover" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;border-radius:16px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <div class="dr-img-ph" style="display:none;">
         <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span style="font-size:11px;opacity:0.7;">image/discussreadycover.png</span>
@@ -1955,49 +1958,49 @@ html { scroll-behavior: smooth; }
     <div id="drTabPanels">
       <div class="dr-tab-panel active">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/pre_class_discussion.png','Pre-Class Preparation')">
-          <img src="image/pre_class_discussion.png" alt="Pre-Class Preparation" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/pre_class_discussion.png" alt="Pre-Class Preparation" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>image/pre_class_discussion.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Pre-Class Preparation</strong>AI tutor guides students through 4 sub-stages — summarize, connect, position, counterargue — with targeted feedback at each step.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/rehearsal.png','AI Rehearsal')">
-          <img src="image/rehearsal.png" alt="AI Rehearsal" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/rehearsal.png" alt="AI Rehearsal" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg><span>image/rehearsal.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>AI Rehearsal</strong>Simulated discussion with TTS-voiced AI classmates — speak aloud, get transcribed, practice before the real thing.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases1.png','Phrases — View 1')">
-          <img src="image/phrases1.png" alt="Phrases View 1" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/phrases1.png" alt="Phrases View 1" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>image/phrases1.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Phrase Stock ①</strong>Curated sentence starters across 5 dialogue move types — ready to copy and use in class.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases2.png','Phrases — View 2')">
-          <img src="image/phrases2.png" alt="Phrases View 2" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/phrases2.png" alt="Phrases View 2" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>image/phrases2.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Phrase Stock ②</strong>Saved phrases view — personal bank of saved moves organized for quick reference during discussion.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/reflection.png','Reflection')">
-          <img src="image/reflection.png" alt="Reflection" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/reflection.png" alt="Reflection" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg><span>image/reflection.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Reflection</strong>Post-class log and AI feedback — track participation growth and set goals for next session.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/notification.png','Notification')">
-          <img src="image/notification.png" alt="Notification" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/notification.png" alt="Notification" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span>image/notification.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Notification</strong>Timely reminders and class material sync notifications keep students prepared ahead of each session.</div>
       </div>
       <div class="dr-tab-panel">
         <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/achievement.png','Achievement')">
-          <img src="image/achievement.png" alt="Achievement" style="width:100%;height:100%;object-fit:cover;display:block;position:static;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="image/achievement.png" alt="Achievement" style="width:100%;height:auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="dr-screenshot-ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg><span>image/achievement.png</span></div>
         </div>
         <div class="dr-screenshot-label"><strong>Achievement</strong>Badges and milestone markers celebrate participation growth — scaffold fading signals increasing mastery over time.</div>
