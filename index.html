@@ -695,6 +695,15 @@ html { scroll-behavior: smooth; }
   background: linear-gradient(90deg, var(--dr-purple), var(--dr-blue), var(--dr-purple));
   z-index: 300; pointer-events: none;
 }
+#discussready-root::before {
+  content: '';
+  position: fixed; bottom: -40px; left: -40px;
+  width: 320px; height: 320px;
+  background: url('image/discussreadyicon2.png') no-repeat center/contain;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
 #discussready-root nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   background: rgba(238,234,255,0.92); backdrop-filter: blur(20px);
