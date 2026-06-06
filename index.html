@@ -109,10 +109,11 @@ html { scroll-behavior: smooth; }
 .proj-thumb.t2 { background: linear-gradient(135deg,#8898cc,#5a6ab0); }
 .proj-thumb.t3 { background: linear-gradient(135deg,#6a8ec0,#3e5e98); }
 .proj-thumb.t5 { background: linear-gradient(135deg,#c4b5fd,#8b5cf6,#4a90d9); }
+.proj-thumb.t6 { background: linear-gradient(135deg,#d49ce0,#b15bbf,#3a2168); }
 .proj-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-info { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
-.proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; font-weight: 600; }
-.proj-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; font-weight: 600; height: 22px; line-height: 22px; overflow: visible; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.proj-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.2; height: 2.4em; overflow: hidden; }
 .proj-info p { font-size: 13px; line-height: 1.75; color: var(--muted); flex: 1; }
 .proj-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(46,64,144,0.1); display: flex; align-items: center; justify-content: space-between; }
 .proj-status { font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 6px; }
@@ -777,7 +778,6 @@ html { scroll-behavior: smooth; }
 }
 .dr-stat-label { font-size: 10.5px; color: var(--dr-muted); letter-spacing: 0.03em; line-height: 1.45; }
 
-/* hero image slot — placeholder */
 .dr-hero-img-slot {
   border-radius: 16px; overflow: hidden;
   box-shadow: 0 28px 60px rgba(124,58,237,0.20), 0 0 0 1px rgba(124,58,237,0.15);
@@ -791,7 +791,6 @@ html { scroll-behavior: smooth; }
   gap: 10px; color: rgba(124,58,237,0.55); font-size: 11.5px; text-align: center; padding: 20px;
 }
 
-/* Content */
 .dr-content { max-width: 1000px; margin: 0 auto; padding: 0 80px 120px; }
 .dr-section { margin-bottom: 60px; width: 100%; }
 .dr-divider {
@@ -818,7 +817,6 @@ html { scroll-behavior: smooth; }
 .dr-prose p { margin-bottom: 15px; }
 .dr-prose strong { color: var(--dr-ink); font-weight: 600; }
 
-/* Theory cards */
 .dr-theory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
 .dr-theory-card {
   background: rgba(255,255,255,0.65); border: 1px solid rgba(124,58,237,0.15);
@@ -829,7 +827,6 @@ html { scroll-behavior: smooth; }
 .dr-theory-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--dr-ink); margin-bottom: 9px; }
 .dr-theory-card p { font-size: 13px; line-height: 1.75; color: var(--dr-muted); }
 
-/* Stage flow */
 .dr-stage-flow { display: flex; flex-direction: column; gap: 16px; width: 100%; }
 .dr-stage {
   display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start;
@@ -855,7 +852,6 @@ html { scroll-behavior: smooth; }
   border: 1px solid rgba(124,58,237,0.18); border-radius: 20px; padding: 3px 10px;
 }
 
-/* Feature cards */
 .dr-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; }
 .dr-feature-card {
   background: rgba(255,255,255,0.65); border: 1px solid rgba(124,58,237,0.12);
@@ -867,7 +863,6 @@ html { scroll-behavior: smooth; }
 .dr-feature-card h5 { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--dr-ink); margin-bottom: 7px; }
 .dr-feature-card p { font-size: 12.5px; line-height: 1.68; color: var(--dr-muted); }
 
-/* Screenshot placeholders */
 .dr-screenshots { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; width: 100%; }
 .dr-screenshot-slot {
   border-radius: 12px; overflow: hidden;
@@ -888,7 +883,6 @@ html { scroll-behavior: smooth; }
 .dr-screenshot-label { margin-top: 10px; font-size: 13px; color: var(--dr-muted); line-height: 1.5; }
 .dr-screenshot-label strong { display: block; color: var(--dr-ink); font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
 
-/* DR stages layout — instruction image left, stages right */
 .dr-stages-layout {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -898,7 +892,6 @@ html { scroll-behavior: smooth; }
 }
 .dr-stages-img-col { flex-shrink: 0; }
 .dr-stages-cards-col { display: flex; flex-direction: column; gap: 14px; }
-/* smaller stage cards for the right-side layout */
 .dr-stages-cards-col .dr-stage { padding: 14px 18px; }
 .dr-stages-cards-col .dr-stage-icon { width: 40px; height: 40px; font-size: 17px; border-radius: 10px; }
 .dr-stages-cards-col .dr-stage-body h4 { font-size: 16px; margin-bottom: 3px; }
@@ -907,7 +900,6 @@ html { scroll-behavior: smooth; }
   .dr-stages-layout { grid-template-columns: 1fr; }
   .dr-stages-img-col { max-width: 320px; margin: 0 auto; }
 }
-/* DR screenshot tabs */
 .dr-tab-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .dr-tab {
   padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600;
@@ -931,6 +923,316 @@ html { scroll-behavior: smooth; }
   .dr-features { grid-template-columns: 1fr 1fr; }
   .dr-screenshots { grid-template-columns: 1fr; }
   #discussready-root nav { padding: 12px 20px; }
+}
+
+/* ===== AI & EDTECH MODULE THEME ===== */
+:root {
+  --ae-indigo: #b15bbf;
+  --ae-indigo-l: #d49ce0;
+  --ae-navy: #3a2168;
+  --ae-amber: #7e5bc2;
+  --ae-amber-l: #a07fd6;
+  --ae-lav: #f3ecf7;
+  --ae-lav-d: #ecdcee;
+  --ae-ink: #2a1640;
+  --ae-muted: #6e5a86;
+  --ae-glass: rgba(255,255,255,0.55);
+  --ae-glass-b: rgba(200,150,200,0.40);
+}
+#aiedtech-root {
+  display: none;
+  background-color: var(--ae-lav);
+  background-image:
+    radial-gradient(ellipse 100% 55% at 50% -5%, rgba(177,91,191,0.16) 0%, transparent 58%),
+    radial-gradient(ellipse 60% 60% at 95% 95%, rgba(185,143,176,0.10) 0%, transparent 52%),
+    url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='12' y='12' width='40' height='40' rx='8' fill='none' stroke='%23b15bbf' stroke-width='0.5' stroke-opacity='0.06'/%3E%3Ccircle cx='32' cy='32' r='5' fill='none' stroke='%233a2168' stroke-width='0.4' stroke-opacity='0.05'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  color: var(--ae-ink);
+  overflow-x: hidden;
+}
+#aiedtech-root::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--ae-navy), var(--ae-indigo), var(--ae-amber));
+  z-index: 300; pointer-events: none;
+}
+#aiedtech-root nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(238,240,251,0.92); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(177,91,191,0.14);
+  display: flex; align-items: center; padding: 14px 48px; gap: 36px;
+}
+#aiedtech-root .ae-nav-name {
+  color: var(--ae-indigo);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700; font-style: italic;
+  cursor: pointer; display: flex; align-items: center; gap: 6px; margin-right: auto;
+  text-decoration: none;
+}
+#aiedtech-root .ae-nav-back {
+  text-decoration: none; color: var(--ae-muted);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.09em;
+  display: flex; align-items: center; gap: 7px;
+  transition: color 0.3s; text-transform: uppercase; cursor: pointer;
+}
+#aiedtech-root .ae-nav-back:hover { color: var(--ae-indigo); }
+
+@keyframes aeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+.ae-hero {
+  max-width: 1100px; margin: 0 auto;
+  padding: 148px 80px 80px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: center;
+}
+.ae-hero-text { animation: aeUp 0.85s ease both; }
+.ae-hero-vis  { animation: aeUp 0.95s ease 0.1s both; }
+.ae-eyebrow {
+  font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--ae-amber); margin-bottom: 18px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+}
+.ae-eyebrow::before {
+  content: ''; display: inline-block; width: 26px; height: 1px;
+  background: var(--ae-amber); opacity: 0.8;
+}
+.ae-hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 3.3vw, 50px);
+  font-weight: 700; line-height: 1.08; margin-bottom: 12px; color: var(--ae-ink);
+}
+.ae-hero-text h1 em { font-style: italic; color: var(--ae-indigo); font-weight: 700; }
+.ae-hero-sub {
+  font-size: 14px; color: var(--ae-muted); line-height: 1.75;
+  margin-bottom: 28px; max-width: 440px;
+}
+.ae-tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.ae-tag {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  font-weight: 600; padding: 6px 16px; border-radius: 20px;
+  border: 1px solid rgba(177,91,191,0.25); color: var(--ae-indigo);
+  background: rgba(177,91,191,0.06);
+}
+.ae-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.ae-cta {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px;
+  background: var(--ae-indigo); color: #fff; font-size: 11.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  border-radius: 8px; transition: background 0.3s;
+  box-shadow: 0 4px 20px rgba(177,91,191,0.28);
+}
+.ae-cta:hover { background: #7e5bc2; }
+.ae-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.ae-stat {
+  flex: 1; min-width: 68px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(177,91,191,0.18);
+  border-radius: 16px; padding: 14px 16px 12px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ae-stat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(177,91,191,0.12); }
+.ae-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px; font-weight: 700; color: var(--ae-indigo); line-height: 1; margin-bottom: 5px;
+}
+.ae-stat-label { font-size: 10.5px; color: var(--ae-muted); letter-spacing: 0.03em; line-height: 1.45; }
+
+.ae-hero-img-slot {
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 28px 60px rgba(58,33,104,0.22), 0 0 0 1px rgba(177,91,191,0.15);
+  aspect-ratio: 16/11; position: relative;
+  background: linear-gradient(135deg, #d49ce0, #b15bbf, #3a2168);
+  display: flex; align-items: center; justify-content: center;
+}
+.ae-hero-img-slot > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ae-img-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; color: rgba(255,255,255,0.6); font-size: 11.5px; text-align: center; padding: 20px;
+}
+
+.ae-content { max-width: 1000px; margin: 0 auto; padding: 0 80px 120px; }
+.ae-section { margin-bottom: 60px; width: 100%; }
+.ae-divider {
+  height: 1px;
+  background: linear-gradient(to right, rgba(177,91,191,0.2), rgba(185,143,176,0.14), transparent);
+  margin-bottom: 60px;
+}
+.ae-label {
+  font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--ae-amber); margin-bottom: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+}
+.ae-label::before {
+  content: ''; display: inline-block; width: 20px; height: 1px;
+  background: var(--ae-amber); opacity: 0.8;
+}
+.ae-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2.8vw, 40px); font-weight: 700;
+  line-height: 1.1; margin-bottom: 26px; color: var(--ae-ink);
+}
+.ae-title em { font-style: italic; color: var(--ae-indigo); }
+.ae-prose { font-size: 14.5px; line-height: 1.9; color: var(--ae-muted); }
+.ae-prose p { margin-bottom: 15px; }
+.ae-prose strong { color: var(--ae-ink); font-weight: 600; }
+
+.ae-callout {
+  background: linear-gradient(135deg, rgba(177,91,191,0.06), rgba(185,143,176,0.05));
+  border: 1px solid rgba(177,91,191,0.13); border-left: 3px solid var(--ae-amber);
+  border-radius: 16px; padding: 22px 26px;
+  font-size: 14px; line-height: 1.8; color: var(--ae-muted); font-style: italic;
+  margin-top: 24px;
+}
+.ae-callout strong { color: var(--ae-ink); font-style: normal; }
+
+.ae-theory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+.ae-theory-card {
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  border-top: 2.5px solid var(--ae-indigo);
+  border-radius: 16px; padding: 26px 28px;
+}
+.ae-theory-card .tc-num { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ae-amber); font-weight: 600; margin-bottom: 8px; }
+.ae-theory-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--ae-ink); margin-bottom: 9px; }
+.ae-theory-card p { font-size: 13px; line-height: 1.75; color: var(--ae-muted); }
+
+.ae-objectives { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.ae-objective {
+  display: grid; grid-template-columns: 34px 1fr; gap: 16px; align-items: start;
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  border-radius: 14px; padding: 16px 22px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ae-objective:hover { transform: translateX(4px); box-shadow: 4px 8px 24px rgba(177,91,191,0.08); }
+.ae-obj-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--ae-indigo), var(--ae-amber));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+}
+.ae-objective p { font-size: 13.5px; line-height: 1.7; color: var(--ae-muted); margin: 0; padding-top: 5px; }
+
+.ae-flow-img-slot {
+  border-radius: 16px; overflow: hidden; position: relative; width: 100%;
+  background: linear-gradient(135deg, #f2e0ee, #e6c8e0);
+  border: 1px solid rgba(177,91,191,0.15);
+  box-shadow: 0 8px 24px rgba(177,91,191,0.10);
+  cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ae-flow-img-slot:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(177,91,191,0.15); }
+.ae-flow-img-slot > img { width: 100%; height: auto; display: block; }
+.ae-flow-img-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; min-height: 220px; color: rgba(177,91,191,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
+}
+.ae-flow { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+.ae-flow-step {
+  display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start;
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.13);
+  border-radius: 16px; padding: 18px 22px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ae-flow-step:hover { transform: translateX(5px); box-shadow: 5px 10px 28px rgba(177,91,191,0.10); }
+.ae-flow-icon {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.ae-flow-icon.l0 { background: linear-gradient(135deg,#f0d4e6,#d49ce0); }
+.ae-flow-icon.l1 { background: linear-gradient(135deg,#e0b0d4,#b15bbf); }
+.ae-flow-icon.l2 { background: linear-gradient(135deg,#caa0e0,#7e5bc2); }
+.ae-flow-icon.l3 { background: linear-gradient(135deg,#d97ab0,#b15bbf); }
+.ae-flow-icon.l4 { background: linear-gradient(135deg,#3a2168,#7e5bc2); }
+.ae-flow-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--ae-ink); margin-bottom: 4px; }
+.ae-flow-body p { font-size: 13px; line-height: 1.7; color: var(--ae-muted); }
+.ae-flow-badge {
+  display: inline-flex; align-items: center; margin-bottom: 6px;
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
+  color: var(--ae-indigo); background: rgba(177,91,191,0.08);
+  border: 1px solid rgba(177,91,191,0.18); border-radius: 20px; padding: 3px 10px;
+}
+
+.ae-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; width: 100%; }
+.ae-pillar { border-radius: 18px; padding: 26px 22px 30px; position: relative; overflow: hidden; }
+.ae-pillar.p1 { background: linear-gradient(155deg, #f7e2f0, #eec4e0); }
+.ae-pillar.p2 { background: linear-gradient(155deg, #ece0f7, #d4c0ee); }
+.ae-pillar.p3 { background: linear-gradient(155deg, #f7dcec, #e8c0da); }
+.ae-pillar-icon { font-size: 26px; margin-bottom: 12px; }
+.ae-pillar h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--ae-ink); margin-bottom: 9px; }
+.ae-pillar p { font-size: 12.5px; line-height: 1.7; color: var(--ae-muted); }
+
+.ae-assess-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
+.ae-assess-card {
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  border-radius: 16px; padding: 24px 26px;
+}
+.ae-assess-card .ac-tag {
+  display: inline-block; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 600; color: var(--ae-amber); margin-bottom: 10px;
+}
+.ae-assess-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--ae-ink); margin-bottom: 12px; }
+.ae-assess-card ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.ae-assess-card li { font-size: 13px; line-height: 1.7; color: var(--ae-muted); padding-left: 16px; position: relative; }
+.ae-assess-card li::before { content: '—'; position: absolute; left: 0; color: var(--ae-indigo); font-size: 11px; }
+
+.ae-access { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; width: 100%; }
+.ae-access-card {
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.12);
+  border-radius: 16px; padding: 22px 20px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ae-access-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(177,91,191,0.10); }
+.ae-access-icon { font-size: 22px; margin-bottom: 11px; }
+.ae-access-card h5 { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; color: var(--ae-ink); margin-bottom: 7px; }
+.ae-access-card p { font-size: 12.5px; line-height: 1.68; color: var(--ae-muted); }
+.ae-wcag-badge {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 18px;
+  background: linear-gradient(135deg, rgba(177,91,191,0.10), rgba(185,143,176,0.10));
+  border: 1px solid rgba(177,91,191,0.2); border-radius: 30px; padding: 8px 18px;
+  font-size: 12px; font-weight: 600; color: var(--ae-navy);
+}
+
+.ae-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; width: 100%; }
+.ae-screen-slot {
+  border-radius: 12px; overflow: hidden; position: relative;
+  background: linear-gradient(135deg, #f2e0ee, #e6c8e0);
+  border: 1px solid rgba(177,91,191,0.15);
+  box-shadow: 0 6px 20px rgba(177,91,191,0.08);
+  cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ae-screen-slot:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(177,91,191,0.13); }
+.ae-screen-slot > img { width: 100%; height: auto; display: block; border-radius: 12px; }
+.ae-screen-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; color: rgba(177,91,191,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
+}
+.ae-screen-label { margin-top: 10px; font-size: 13px; color: var(--ae-muted); line-height: 1.5; }
+.ae-screen-label strong { display: block; color: var(--ae-ink); font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
+
+.ae-pdf-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.ae-pdf-btn {
+  display: inline-flex; align-items: center; gap: 7px; padding: 10px 22px; border-radius: 24px;
+  background: var(--ae-indigo); color: #fff; font-size: 11.5px; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none;
+  transition: all 0.25s; border: 1.5px solid transparent;
+  box-shadow: 0 4px 14px rgba(177,91,191,0.20);
+}
+.ae-pdf-btn:hover { background: #7e5bc2; }
+.ae-pdf-note { font-size: 11.5px; color: var(--ae-muted); margin-top: 10px; font-style: italic; line-height: 1.6; opacity: 0.85; }
+
+#aiedtech-root footer {
+  text-align: center; padding: 36px; font-size: 11.5px;
+  color: rgba(110,90,134,0.5); letter-spacing: 0.08em;
+  border-top: 1px solid rgba(177,91,191,0.1);
+}
+@media(max-width:800px) {
+  .ae-hero { grid-template-columns: 1fr; gap: 36px; padding: 120px 24px 60px; }
+  .ae-content { padding: 0 24px 80px; }
+  .ae-theory-grid, .ae-assess-grid { grid-template-columns: 1fr; }
+  .ae-pillars, .ae-access { grid-template-columns: 1fr; }
+  .ae-screens { grid-template-columns: 1fr; }
+  #aiedtech-root nav { padding: 12px 20px; }
 }
 </style>
 </head>
@@ -1039,6 +1341,52 @@ html { scroll-behavior: smooth; }
     <p class="s-label reveal">Projects</p>
     <h2 class="s-title reveal">Selected<br><em>Work</em></h2>
     <div class="projects-grid">
+      <!-- PROJECT 1: DiscussReady -->
+      <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showDiscussReady()">
+        <div class="proj-thumb t5" style="padding:0; overflow:hidden; position:relative;">
+          <img src="image/discussreadycover.png" alt="DiscussReady" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+          <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/discussreadycover.png</span>
+          </div>
+        </div>
+        <div class="proj-info">
+        <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#7c3aed,#4a90d9);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">LATEST</span></p>
+          <h3>DiscussReady: AI-Powered Discussion Coaching</h3>
+          <p>A web app that helps international students prepare for high-stakes classroom discussions. Built on the ICAP framework and SToG external scripts, DiscussReady guides students through structured pre-class preparation, script-based scaffolding, and AI rehearsal — transforming passive reading into confident participation. Designed and coded entirely from scratch.</p>
+          <div class="proj-tags-row">
+            <span class="proj-skill-tag" data-skill="Prototyping">Prototyping</span>
+            <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
+            <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-status live">Live</span>
+            <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- PROJECT 2: AI & EdTech Module -->
+      <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showAIEdTech()">
+        <div class="proj-thumb t6" style="padding:0; overflow:hidden; position:relative;">
+          <img src="image/aiedtech_cover.png" alt="AI & EdTech Module" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+          <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/aiedtech_cover.png</span>
+          </div>
+        </div>
+        <div class="proj-info">
+          <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#b15bbf,#d49ce0);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">Articulate Rise</span></p>
+          <h3>AI &amp; EdTech Tools for K–12 Classrooms</h3>
+          <p>A self-paced e-learning module built in Articulate Rise that helps K–12 teachers choose the right AI/EdTech tool for the right instructional purpose — visualization, engagement, or formative assessment. Grounded in Mayer's Multimedia Learning Theory and Adult Learning Theory, it guides teachers through a decision framework with scenario-based practice, branching activities, and a cumulative final assessment.</p>
+          <div class="proj-tags-row">
+            <span class="proj-skill-tag" data-skill="Instructional Design">Instructional Design</span>
+            <span class="proj-skill-tag" data-skill="Curriculum Development">Curriculum Development</span>
+            <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-status live">Live</span>
+            <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+          </div>
+        </div>
+      </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showChronicle()">
         <div class="proj-thumb t1">
           <img src="image/P1_fengmian.png" alt="Chronicle" onerror="this.parentElement.innerHTML='01'">
@@ -1083,7 +1431,7 @@ html { scroll-behavior: smooth; }
        </div>
         <div class="proj-info">
           <p class="proj-tag">Research Project</p>
-          <h3>Women's Innovation &amp; Entrepreneurship in Xinjiang: Heshuo County &amp; Tumxuk City</h3>
+          <h3>Women's Entrepreneurship in Rural Xinjiang</h3>
           <p>Practical research on women's innovation and entrepreneurship in Heshuo County and Tumxuk City, Xinjiang — 264 surveys, government interviews, four case studies, and the design of <em>SheRise (巾帼创梦)</em>.</p>
           <div class="proj-tags-row">
             <span class="proj-skill-tag" data-skill="Field Research">Field Research</span>
@@ -1109,30 +1457,6 @@ html { scroll-behavior: smooth; }
             <span class="proj-skill-tag" data-skill="Instructional Design">Instructional Design</span>
             <span class="proj-skill-tag" data-skill="AR/VR Tools">AR/VR Tools</span>
             <span class="proj-skill-tag" data-skill="Curriculum Development">Curriculum Development</span>
-          </div>
-          <div class="proj-footer">
-            <span class="proj-status live">Live</span>
-            <span class="proj-link">View <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-          </div>
-        </div>
-      </div>
-      <!-- PROJECT 5: DiscussReady — full width -->
-      <div class="proj-card reveal" style="grid-column: 1 / -1;" onclick="if(!event.target.classList.contains('proj-skill-tag'))showDiscussReady()">
-        <div class="proj-thumb t5" style="aspect-ratio:21/9; padding:0; overflow:hidden; position:relative;">
-          <img src="image/discussreadycover.png" alt="DiscussReady" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/discussreadycover.png</span>
-          </div>
-        </div>
-        <div class="proj-info">
-        <p class="proj-tag">Course Project &nbsp;<span style="background:linear-gradient(135deg,#7c3aed,#4a90d9);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">LATEST</span></p>
-          <h3>DiscussReady: AI-Powered Discussion Coaching</h3>
-          <p>A web app that helps international students prepare for high-stakes classroom discussions. Built on the ICAP framework and SToG external scripts, DiscussReady guides students through structured pre-class preparation, script-based scaffolding, and AI rehearsal — transforming passive reading into confident participation. Designed and coded entirely from scratch.</p>
-          <div class="proj-tags-row">
-            <span class="proj-skill-tag" data-skill="Prototyping">Prototyping</span>
-            <span class="proj-skill-tag" data-skill="AI Coding">AI Coding</span>
-            <span class="proj-skill-tag" data-skill="Learning Experience Design">Learning Experience Design</span>
           </div>
           <div class="proj-footer">
             <span class="proj-status live">Live</span>
@@ -1651,7 +1975,7 @@ html { scroll-behavior: smooth; }
       <div class="xj-mini-left">
         <div class="xj-mini-header">
           <div class="xj-mini-icon" id="app-icon-slot">
-            <img src="image/appicon.jpg" alt="SheRise App Icon" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="image/appicon.jpg" alt="SheRise App Icon" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')">
             <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:22px;">🌸</div>
           </div>
           <div class="xj-mini-icon-label">
@@ -1679,11 +2003,11 @@ html { scroll-behavior: smooth; }
     </div>
     <div class="xj-app-gallery">
       <div class="xj-gallery-col-left">
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')"><img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp1.jpg</span></div></div>
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')"><img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp2.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 1')"><img src="image/xinjiangapp1.jpg" alt="SheRise App Screenshot 1" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp1.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 2')"><img src="image/xinjiangapp2.jpg" alt="SheRise App Screenshot 2" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp2.jpg</span></div></div>
       </div>
       <div class="xj-gallery-col-right">
-        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')"><img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp3.jpg</span></div></div>
+        <div class="xj-gallery-slot" onclick="openLightbox(this.querySelector('img').src,'SheRise App — Screen 3')"><img src="image/xinjiangapp3.jpg" alt="SheRise App Screenshot 3" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')"><div class="xj-gallery-ph" style="display:none;"><span>image/xinjiangapp3.jpg</span></div></div>
       </div>
     </div>
   </div>
@@ -1759,7 +2083,7 @@ html { scroll-behavior: smooth; }
     <a href="https://schools.360cities.net/guided-tour/v7BO2w5TPlWrdHa8NRLNjg/exploring-landforms-canyon-volcano-and-delta" target="_blank" rel="noopener" class="lf-cta">Visit Live Tour <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
   </div>
   <div class="lf-hero-vis">
-    <div class="lf-hero-img-slot"><img src="image/lfcover2.png" alt="Landforms 360 Tour" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="lf-hero-img-placeholder"></div></div>
+    <div class="lf-hero-img-slot"><img src="image/lfcover2.png" alt="Landforms 360 Tour" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')"><div class="lf-hero-img-placeholder"></div></div>
   </div>
 </div>
 <div class="lf-content">
@@ -1784,10 +2108,10 @@ html { scroll-behavior: smooth; }
     <p class="lf-label">Screenshots</p>
     <h2 class="lf-title">Tour in <em>Action</em></h2>
     <div class="lf-screenshots" style="grid-template-columns:repeat(2,1fr);">
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Tour overview')"><img src="image/lf_screen1.png" alt="Tour overview" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>360° Panorama View</strong>Tour interface with interactive annotation tags overlaid on the panorama.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'VR volcano room')"><img src="image/lf_screen2.png" alt="VR volcano room" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>FrameVR Volcano Room</strong>Immersive 3D space with internal volcanic structure models.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'In-tour quiz')"><img src="image/lf_screen3.png" alt="In-tour quiz" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>In-Tour Quiz</strong>Short comprehension checks embedded at the end of each landform module.</div></div>
-      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Educational video')"><img src="image/lf_screen4.png" alt="Educational video" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"></div><div class="lf-screenshot-label"><strong>Educational Video</strong>Short videos embedded within each module to deepen understanding of formation processes.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Tour overview')"><img src="image/lf_screen1.png" alt="Tour overview" onerror="this.style.display='none'"></div><div class="lf-screenshot-label"><strong>360° Panorama View</strong>Tour interface with interactive annotation tags overlaid on the panorama.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'VR volcano room')"><img src="image/lf_screen2.png" alt="VR volcano room" onerror="this.style.display='none'"></div><div class="lf-screenshot-label"><strong>FrameVR Volcano Room</strong>Immersive 3D space with internal volcanic structure models.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'In-tour quiz')"><img src="image/lf_screen3.png" alt="In-tour quiz" onerror="this.style.display='none'"></div><div class="lf-screenshot-label"><strong>In-Tour Quiz</strong>Short comprehension checks embedded at the end of each landform module.</div></div>
+      <div><div class="lf-screenshot-slot" onclick="openLightbox(this.querySelector('img')?.src,'Educational video')"><img src="image/lf_screen4.png" alt="Educational video" onerror="this.style.display='none'"></div><div class="lf-screenshot-label"><strong>Educational Video</strong>Short videos embedded within each module to deepen understanding of formation processes.</div></div>
     </div>
   </div>
 </div>
@@ -1827,9 +2151,8 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
   <div class="dr-hero-vis">
-    <!-- Cover image placeholder — replace src with image/discussreadycover.png once in image/ folder -->
     <div class="dr-hero-img-slot" style="position:relative;">
-      <img src="image/discussreadycover.png" alt="DiscussReady cover" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;border-radius:16px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="image/discussreadycover.png" alt="DiscussReady cover" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;border-radius:16px;" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='block')">
       <div class="dr-img-ph" style="display:none;">
         <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <span style="font-size:11px;opacity:0.7;">image/discussreadycover.png</span>
@@ -1861,13 +2184,10 @@ html { scroll-behavior: smooth; }
   <div class="dr-section reveal">
     <p class="dr-label">Core Flow</p>
         <h2 class="dr-title">Four <em>Stages</em></h2>
-    <!-- Instruction image + stages in left-right layout -->
     <div class="dr-stages-layout">
-      <!-- LEFT: instruction image (tall/narrow) -->
       <div class="dr-stages-img-col">
         <img src="image/discussready_instruction.jpg" alt="DiscussReady — how it works" style="width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(124,58,237,0.18);display:block;">
       </div>
-      <!-- RIGHT: 4 stage cards -->
       <div class="dr-stages-cards-col">
         <div class="dr-stage">
           <div class="dr-stage-icon s1">📚</div>
@@ -1949,7 +2269,6 @@ html { scroll-behavior: smooth; }
   <div class="dr-section reveal">
     <p class="dr-label">Screenshots</p>
     <h2 class="dr-title">App in <em>Action</em></h2>
-    <!-- Tab buttons -->
     <div class="dr-tab-row" id="drTabRow">
       <button class="dr-tab active" onclick="drTab(0,this)">Pre-Class Prep</button>
       <button class="dr-tab" onclick="drTab(1,this)">AI Rehearsal</button>
@@ -1959,52 +2278,262 @@ html { scroll-behavior: smooth; }
       <button class="dr-tab" onclick="drTab(5,this)">Notification</button>
       <button class="dr-tab" onclick="drTab(6,this)">Achievement</button>
     </div>
- <div id="drTabPanels">
-  <div class="dr-tab-panel active">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/pre_class_discussion.png','Pre-Class Preparation')">
-      <img src="image/pre_class_discussion.png" alt="Pre-Class Preparation" style="width:100%;height:auto;display:block;">
+    <div id="drTabPanels">
+      <div class="dr-tab-panel active">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/pre_class_discussion.png','Pre-Class Preparation')">
+          <img src="image/pre_class_discussion.png" alt="Pre-Class Preparation" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Pre-Class Preparation</strong>AI tutor guides students through 4 sub-stages — summarize, connect, position, counterargue — with targeted feedback at each step.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/rehearsal.png','AI Rehearsal')">
+          <img src="image/rehearsal.png" alt="AI Rehearsal" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>AI Rehearsal</strong>Simulated discussion with TTS-voiced AI classmates — speak aloud, get transcribed, practice before the real thing.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases1.png','Phrases — View 1')">
+          <img src="image/phrases1.png" alt="Phrases View 1" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Phrase Stock ①</strong>Curated sentence starters across 5 dialogue move types — ready to copy and use in class.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases2.png','Phrases — View 2')">
+          <img src="image/phrases2.png" alt="Phrases View 2" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Phrase Stock ②</strong>Saved phrases view — personal bank of saved moves organized for quick reference during discussion.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/reflection.png','Reflection')">
+          <img src="image/reflection.png" alt="Reflection" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Reflection</strong>Post-class log and AI feedback — track participation growth and set goals for next session.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/notification.png','Notification')">
+          <img src="image/notification.png" alt="Notification" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Notification</strong>Timely reminders and class material sync notifications keep students prepared ahead of each session.</div>
+      </div>
+      <div class="dr-tab-panel">
+        <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/achievement.png','Achievement')">
+          <img src="image/achievement.png" alt="Achievement" style="width:100%;height:auto;display:block;">
+        </div>
+        <div class="dr-screenshot-label"><strong>Achievement</strong>Badges and milestone markers celebrate participation growth — scaffold fading signals increasing mastery over time.</div>
+      </div>
     </div>
-    <div class="dr-screenshot-label"><strong>Pre-Class Preparation</strong>AI tutor guides students through 4 sub-stages — summarize, connect, position, counterargue — with targeted feedback at each step.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/rehearsal.png','AI Rehearsal')">
-      <img src="image/rehearsal.png" alt="AI Rehearsal" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>AI Rehearsal</strong>Simulated discussion with TTS-voiced AI classmates — speak aloud, get transcribed, practice before the real thing.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases1.png','Phrases — View 1')">
-      <img src="image/phrases1.png" alt="Phrases View 1" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>Phrase Stock ①</strong>Curated sentence starters across 5 dialogue move types — ready to copy and use in class.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/phrases2.png','Phrases — View 2')">
-      <img src="image/phrases2.png" alt="Phrases View 2" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>Phrase Stock ②</strong>Saved phrases view — personal bank of saved moves organized for quick reference during discussion.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/reflection.png','Reflection')">
-      <img src="image/reflection.png" alt="Reflection" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>Reflection</strong>Post-class log and AI feedback — track participation growth and set goals for next session.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/notification.png','Notification')">
-      <img src="image/notification.png" alt="Notification" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>Notification</strong>Timely reminders and class material sync notifications keep students prepared ahead of each session.</div>
-  </div>
-  <div class="dr-tab-panel">
-    <div class="dr-screenshot-slot" style="cursor:zoom-in;" onclick="openLightbox('image/achievement.png','Achievement')">
-      <img src="image/achievement.png" alt="Achievement" style="width:100%;height:auto;display:block;">
-    </div>
-    <div class="dr-screenshot-label"><strong>Achievement</strong>Badges and milestone markers celebrate participation growth — scaffold fading signals increasing mastery over time.</div>
   </div>
 </div>
 <footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
 </div><!-- /discussready-root -->
+
+<!-- ============ AI & EDTECH MODULE ROOT ============ -->
+<div id="aiedtech-root" style="display:none;">
+<nav>
+  <span class="ae-nav-name" onclick="showPortfolio()">
+    Erica Shao <img src="image/flower.png" alt="" class="nav-flower" style="height:26px;width:26px;object-fit:contain;filter:hue-rotate(285deg);">
+  </span>
+  <span class="ae-nav-back" onclick="showPortfolio()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+    Back to Projects
+  </span>
+</nav>
+
+<div class="ae-hero">
+  <div class="ae-hero-text">
+    <p class="ae-eyebrow">Course Project · E-Learning Module</p>
+    <h1>Using <em>AI &amp; EdTech Tools</em><br>in K–12 Classrooms</h1>
+    <p class="ae-hero-sub">A self-paced Articulate Rise module that helps K–12 teachers move past shallow, one-size-fits-all AI use — and instead choose the right tool for the right instructional purpose: visualization, engagement, or formative assessment.</p>
+    <div class="ae-tag-row">
+      <span class="ae-tag">Instructional Design</span>
+      <span class="ae-tag">Curriculum Development</span>
+      <span class="ae-tag">Learning Experience Design</span>
+    </div>
+    <div class="ae-cta-row">
+      <a href="https://share.articulate.com/mlHMiizav1lUdMb7wmmGf#/" target="_blank" rel="noopener" class="ae-cta">
+        Explore the Course
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+    <div class="ae-stats">
+      <div class="ae-stat"><div class="ae-stat-num">5</div><div class="ae-stat-label">Lessons</div></div>
+      <div class="ae-stat"><div class="ae-stat-num">3</div><div class="ae-stat-label">Instructional<br>Purposes</div></div>
+      <div class="ae-stat"><div class="ae-stat-num">10</div><div class="ae-stat-label">Tools<br>Compared</div></div>
+    </div>
+  </div>
+  <div class="ae-hero-vis">
+    <div class="ae-hero-img-slot">
+      <img src="image/aiedtech_cover.png" alt="AI & EdTech module cover" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+      <div class="ae-img-ph" style="display:none;">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span style="font-size:11px;opacity:0.8;">image/aiedtech_cover.png</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ae-content">
+  <div class="ae-section reveal">
+    <p class="ae-label">Overview</p>
+    <h2 class="ae-title">Why <em>This</em> Module</h2>
+    <div class="ae-prose">
+      <p>AI and EdTech tools are everywhere in K–12 classrooms — but many teachers reach for them reflexively, using the same tool for every task or adopting whatever is trending without asking what it's actually <strong>for</strong>. The result is technology that decorates a lesson rather than deepening it.</p>
+      <p>This module is built for pre-service and in-service K–12 teachers — especially those with limited EdTech experience. Rather than cataloging tools, it teaches a <strong>decision framework</strong>: first identify the instructional purpose, then choose the tool that serves it. Every recommendation is grounded in a classroom scenario and a clear rationale.</p>
+    </div>
+    <div class="ae-callout">
+      The goal isn't to use more AI — it's to use it <strong>purposefully</strong>. Teachers leave able to justify every tool choice against a specific instructional need.
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Learning Theory</p>
+    <h2 class="ae-title">What <em>Guides</em> the Design</h2>
+    <div class="ae-theory-grid">
+      <div class="ae-theory-card">
+        <p class="tc-num">Theory 01</p>
+        <h4>Mayer's Multimedia Learning</h4>
+        <p>People learn better from words and visuals together than from either alone. The module pairs a Dual Coding diagram beside its explanation, and places a teacher's photo right next to her scenario — applying the Contiguity Principle so related information sits together rather than scattered across the screen.</p>
+      </div>
+      <div class="ae-theory-card">
+        <p class="tc-num">Theory 02</p>
+        <h4>Adult Learning Theory</h4>
+        <p>Adults learn best when content is relevant, problem-centered, and applicable now. The module opens with a frustration teachers recognize, grounds every tool in a real scenario, and ends with a task that asks them to apply the framework directly to their own classroom.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Objectives</p>
+    <h2 class="ae-title">What Teachers <em>Can Do</em></h2>
+    <div class="ae-objectives">
+      <div class="ae-objective"><div class="ae-obj-num">1</div><p>Identify an instructional need in their own teaching and match it to one of three purposes — visualization, engagement, or formative assessment.</p></div>
+      <div class="ae-objective"><div class="ae-obj-num">2</div><p>Understand the reasoning behind choosing a tool for a given purpose, rather than selecting by habit or popularity.</p></div>
+      <div class="ae-objective"><div class="ae-obj-num">3</div><p>Compare multiple tools within a single purpose, weighing their trade-offs for a specific classroom situation.</p></div>
+      <div class="ae-objective"><div class="ae-obj-num">4</div><p>Apply the framework to select and justify an appropriate tool for a lesson they actually plan to teach.</p></div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Content Flow</p>
+    <h2 class="ae-title">Five <em>Lessons</em></h2>
+    <div class="ae-flow-img-slot" onclick="openLightbox('image/aiedtech_flow.png','Content Flow — Five Lessons')">
+      <img src="image/aiedtech_flow.png" alt="Content flow — five lessons" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+      <div class="ae-flow-img-ph" style="display:none;">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+        <span>image/aiedtech_flow.png</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">The Framework</p>
+    <h2 class="ae-title">Three <em>Purposes</em></h2>
+    <div class="ae-pillars">
+      <div class="ae-pillar p1">
+        <div class="ae-pillar-icon">👁️</div>
+        <h4>Visualization</h4>
+        <p>Make abstract concepts and complex processes visible — diagrams, models, and representations that turn the invisible into something students can see and reason about.</p>
+      </div>
+      <div class="ae-pillar p2">
+        <div class="ae-pillar-icon">✨</div>
+        <h4>Engagement</h4>
+        <p>Pull students into active participation — interactive activities and response tools that turn a passive room into an involved one.</p>
+      </div>
+      <div class="ae-pillar p3">
+        <div class="ae-pillar-icon">📋</div>
+        <h4>Formative Assessment</h4>
+        <p>Reveal student understanding in real time — quick checks that let teachers adjust instruction before misconceptions harden.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Activity Example</p>
+    <div class="ae-screens" style="margin-top:18px;">
+      <div>
+        <div class="ae-screen-slot" onclick="openLightbox('image/aiedtech_activity.png','Activity example')">
+          <img src="image/aiedtech_activity.png" alt="Activity example" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+          <div class="ae-screen-ph" style="display:none;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+            <span>image/aiedtech_activity.png</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ae-screen-slot" onclick="openLightbox('image/aiedtech_lesson.png','Activity example')">
+          <img src="image/aiedtech_lesson.png" alt="Activity example" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+          <div class="ae-screen-ph" style="display:none;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+            <span>image/aiedtech_lesson.png</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Assessment</p>
+    <h2 class="ae-title">How Learning <em>Is Checked</em></h2>
+    <div class="ae-assess-grid">
+      <div class="ae-assess-card">
+        <span class="ac-tag">Lessons 2–4 · Practice</span>
+        <h4>Scenario Practice</h4>
+        <ul>
+          <li>Each tool lesson includes two scenario-based multiple-choice questions.</li>
+          <li>Unlimited attempts, so practice stays low-stakes.</li>
+          <li>Immediate feedback explains the reasoning behind the right choice — not just whether it was correct.</li>
+        </ul>
+      </div>
+      <div class="ae-assess-card">
+        <span class="ac-tag">Lesson 5 · Final</span>
+        <h4>Cumulative Assessment</h4>
+        <ul>
+          <li>Five mixed scenarios spanning all three purposes.</li>
+          <li>Three multiple-choice, one matching, and one fill-in-the-blank.</li>
+          <li>The final task asks teachers to apply the framework to their own lesson — with prompts, criteria, and a worked example to guide them.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ae-divider"></div>
+
+  <div class="ae-section reveal">
+    <p class="ae-label">Accessibility</p>
+    <h2 class="ae-title">Designed for <em>Everyone</em></h2>
+    <div class="ae-access">
+      <div class="ae-access-card">
+        <div class="ae-access-icon">🎧</div>
+        <h5>Multimodal</h5>
+        <p>Audio accompanies complex visuals so learners can take in information through more than one channel.</p>
+      </div>
+      <div class="ae-access-card">
+        <div class="ae-access-icon">🔊</div>
+        <h5>Accessible Interaction</h5>
+        <p>Audio narration plus backend scene descriptions make interactive moments usable with screen readers.</p>
+      </div>
+      <div class="ae-access-card">
+        <div class="ae-access-icon">🌓</div>
+        <h5>High Contrast</h5>
+        <p>Text and background colors are chosen for strong contrast, keeping content legible well beyond the WCAG AAA threshold.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Erica (Yue) Shao &nbsp;·&nbsp; Chapel Hill, NC</footer>
+</div><!-- /aiedtech-root -->
 
 <script>
 (function() {
@@ -2115,7 +2644,7 @@ var _orig=window._startChronicleGlow;
 window._startChronicleGlow=function(){if(_orig)_orig();setTimeout(initCarousels,100);};
 
 function _hideAllRoots() {
-  ['portfolio-root','chronicle-root','autogen-root','xinjiang-root','landforms-root','discussready-root'].forEach(function(id){
+  ['portfolio-root','chronicle-root','autogen-root','xinjiang-root','landforms-root','discussready-root','aiedtech-root'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.style.display='none';
   });
 }
@@ -2211,12 +2740,32 @@ function showDiscussReady() {
   setTimeout(function(){overlay.classList.remove('active');},2200);
 }
 
+function showAIEdTech() {
+  var overlay=document.getElementById('entrance-overlay');
+  var eoTitle=overlay.querySelector('.eo-title');
+  if(eoTitle) eoTitle.textContent='AI & EdTech Tools';
+  overlay.classList.add('active');
+  setTimeout(function(){
+    _hideAllRoots();
+    document.getElementById('aiedtech-root').style.display='block';
+    window.scrollTo(0,0);
+    window._startAIEdTechGlow();
+    document.querySelectorAll('#aiedtech-root .reveal').forEach(function(el){el.classList.remove('visible');});
+    setTimeout(function(){
+      var obs6=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs6.unobserve(e.target);}});},{threshold:0.08});
+      document.querySelectorAll('#aiedtech-root .reveal').forEach(function(el){obs6.observe(el);});
+    },100);
+  },1200);
+  setTimeout(function(){overlay.classList.remove('active');},2200);
+}
+
 function showPortfolio() {
   if(window._stopChronicleGlow) window._stopChronicleGlow();
   if(window._stopAutoGenGlow) window._stopAutoGenGlow();
   if(window._stopXinjiangGlow) window._stopXinjiangGlow();
   if(window._stopLandformsGlow) window._stopLandformsGlow();
   if(window._stopDiscussReadyGlow) window._stopDiscussReadyGlow();
+  if(window._stopAIEdTechGlow) window._stopAIEdTechGlow();
   var deco = document.getElementById('xj-pomegranate-deco');
   if(deco) deco.style.display='none';
   _hideAllRoots();
@@ -2328,6 +2877,33 @@ function showPortfolio() {
   window._stopDiscussReadyGlow=function(){
     isInDr=false; drGlowEl.style.opacity='0';
     if(drRaf){cancelAnimationFrame(drRaf);drRaf=null;}
+  };
+})();
+
+/* AI & EdTech glow — periwinkle/mauve */
+(function() {
+  var aeGlowEl = document.createElement('div');
+  aeGlowEl.id = 'aiedtech-glow';
+  aeGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:90px;height:90px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(177,91,191,0.40) 0%,rgba(185,143,176,0.20) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  document.body.appendChild(aeGlowEl);
+  var aeX=window.innerWidth/2, aeY=window.innerHeight/2;
+  var aeCurX=aeX, aeCurY=aeY;
+  var aeRaf=null, isInAe=false;
+  function animateAeGlow() {
+    aeCurX+=(aeX-aeCurX)*0.1; aeCurY+=(aeY-aeCurY)*0.1;
+    aeGlowEl.style.transform='translate(calc('+aeCurX+'px - 50%),calc('+aeCurY+'px - 50%))';
+    if(isInAe) aeRaf=requestAnimationFrame(animateAeGlow);
+  }
+  document.addEventListener('mousemove',function(e){aeX=e.clientX;aeY=e.clientY;});
+  window._startAIEdTechGlow=function(){
+    isInAe=true; aeGlowEl.style.opacity='1';
+    aeCurX=window.innerWidth/2; aeCurY=window.innerHeight/2; aeX=aeCurX; aeY=aeCurY;
+    if(aeRaf) cancelAnimationFrame(aeRaf);
+    aeRaf=requestAnimationFrame(animateAeGlow);
+  };
+  window._stopAIEdTechGlow=function(){
+    isInAe=false; aeGlowEl.style.opacity='0';
+    if(aeRaf){cancelAnimationFrame(aeRaf);aeRaf=null;}
   };
 })();
 
