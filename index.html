@@ -104,13 +104,14 @@ html { scroll-behavior: smooth; }
 .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; margin-top: 8px; }
 .proj-card { background: var(--glass); border: 1px solid var(--glass-b); backdrop-filter: blur(12px); border-radius: 4px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; cursor: pointer; }
 .proj-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(20,35,90,0.14); }
-.proj-thumb { width: 100%; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 40px; font-style: italic; color: rgba(255,255,255,0.85); font-weight: 700; overflow: hidden; }
+.proj-thumb { width: 100%; height: 0; padding-top: 62.5%; position: relative; overflow: hidden; }
+.proj-thumb .thumb-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 40px; font-style: italic; color: rgba(255,255,255,0.85); font-weight: 700; }
 .proj-thumb.t1 { background: linear-gradient(135deg,#7a9cc8,#4e72a8); }
 .proj-thumb.t2 { background: linear-gradient(135deg,#8898cc,#5a6ab0); }
 .proj-thumb.t3 { background: linear-gradient(135deg,#6a8ec0,#3e5e98); }
 .proj-thumb.t5 { background: linear-gradient(135deg,#c4b5fd,#8b5cf6,#4a90d9); }
 .proj-thumb.t6 { background: linear-gradient(135deg,#d49ce0,#b15bbf,#3a2168); }
-.proj-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.proj-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-info { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
 .proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; font-weight: 600; height: 22px; line-height: 22px; overflow: visible; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
 .proj-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.2; height: 2.4em; overflow: hidden; }
@@ -1343,11 +1344,8 @@ html { scroll-behavior: smooth; }
     <div class="projects-grid">
       <!-- PROJECT 1: DiscussReady -->
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showDiscussReady()">
-        <div class="proj-thumb t5" style="padding:0; overflow:hidden; position:relative;">
-          <img src="image/discussreadycover.png" alt="DiscussReady" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
-          <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/discussreadycover.png</span>
-          </div>
+        <div class="proj-thumb t5">
+          <img src="image/discussreadycover.png" alt="DiscussReady">
         </div>
         <div class="proj-info">
         <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#7c3aed,#4a90d9);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">LATEST</span></p>
@@ -1366,11 +1364,8 @@ html { scroll-behavior: smooth; }
       </div>
       <!-- PROJECT 2: AI & EdTech Module -->
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showAIEdTech()">
-        <div class="proj-thumb t6" style="padding:0; overflow:hidden; position:relative;">
-          <img src="image/aiedtech_cover.png" alt="AI & EdTech Module" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
-          <div style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
-            <span style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);">image/aiedtech_cover.png</span>
-          </div>
+        <div class="proj-thumb t6">
+          <img src="image/aiedtech_cover.png" alt="AI & EdTech Module">
         </div>
         <div class="proj-info">
           <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#b15bbf,#d49ce0);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">Articulate Rise</span></p>
@@ -1389,7 +1384,7 @@ html { scroll-behavior: smooth; }
       </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showChronicle()">
         <div class="proj-thumb t1">
-          <img src="image/P1_fengmian.png" alt="Chronicle" onerror="this.parentElement.innerHTML='01'">
+          <img src="image/P1_fengmian.png" alt="Chronicle" onerror="this.style.display='none'">
         </div>
         <div class="proj-info">
           <p class="proj-tag">Course Project</p>
@@ -1407,8 +1402,8 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showAutoGen()">
-        <div class="proj-thumb t2" style="padding:0;overflow:hidden;">
-          <img src="image/huojianai.jpg" alt="Automation Assistant" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='02'">
+        <div class="proj-thumb t2">
+          <img src="image/huojianai.jpg" alt="Automation Assistant" onerror="this.style.display='none'">
         </div>
         <div class="proj-info">
           <p class="proj-tag">Internship Project</p>
@@ -1426,8 +1421,8 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showXinjiang()">
-       <div class="proj-thumb" style="padding:0;overflow:hidden;">
-        <img src="image/project3cover.png" style="width:100%;height:100%;object-fit:cover;">
+       <div class="proj-thumb">
+        <img src="image/project3cover.png" alt="Xinjiang research">
        </div>
         <div class="proj-info">
           <p class="proj-tag">Research Project</p>
@@ -1446,8 +1441,8 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showLandforms()">
-         <div class="proj-thumb" style="padding:0;overflow:hidden;">
-          <img src="image/lfcover2.png" style="width:100%;height:100%;object-fit:cover;">
+         <div class="proj-thumb">
+          <img src="image/lfcover2.png" alt="Exploring Landforms">
          </div>
         <div class="proj-info">
           <p class="proj-tag">Course Project</p>
