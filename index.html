@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
+<meta name="build-version" content="aligned-v7-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -113,9 +114,10 @@ html { scroll-behavior: smooth; }
 .proj-thumb.t6 { background: linear-gradient(135deg,#d49ce0,#b15bbf,#3a2168); }
 .proj-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-info { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
-.proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; font-weight: 600; height: 22px; line-height: 22px; overflow: visible; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.proj-info p.proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin: 0 0 8px 0; font-weight: 600; height: 20px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 0 0 auto; }
+.proj-tag .proj-badge { display: inline-block; vertical-align: middle; margin-left: 8px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 20px; line-height: 1.4; }
 .proj-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.2; height: 2.4em; overflow: hidden; }
-.proj-info p { font-size: 13px; line-height: 1.75; color: var(--muted); flex: 1; }
+.proj-info p:not(.proj-tag) { font-size: 13px; line-height: 1.75; color: var(--muted); flex: 1; }
 .proj-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(46,64,144,0.1); display: flex; align-items: center; justify-content: space-between; }
 .proj-status { font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 6px; }
 .proj-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #e8a020; }
@@ -1348,7 +1350,7 @@ html { scroll-behavior: smooth; }
           <img src="image/discussreadycover.png" alt="DiscussReady">
         </div>
         <div class="proj-info">
-        <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#7c3aed,#4a90d9);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">LATEST</span></p>
+        <p class="proj-tag">Course Project<span class="proj-badge" style="background:linear-gradient(135deg,#7c3aed,#4a90d9);">LATEST</span></p>
           <h3>DiscussReady: AI-Powered Discussion Coaching</h3>
           <p>A web app that helps international students prepare for high-stakes classroom discussions. Built on the ICAP framework and SToG external scripts, DiscussReady guides students through structured pre-class preparation, script-based scaffolding, and AI rehearsal — transforming passive reading into confident participation. Designed and coded entirely from scratch.</p>
           <div class="proj-tags-row">
@@ -1368,7 +1370,7 @@ html { scroll-behavior: smooth; }
           <img src="image/aiedtech_cover.png" alt="AI & EdTech Module">
         </div>
         <div class="proj-info">
-          <p class="proj-tag">Course Project<span style="background:linear-gradient(135deg,#b15bbf,#d49ce0);color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:20px;vertical-align:middle;">Articulate Rise</span></p>
+          <p class="proj-tag">Course Project<span class="proj-badge" style="background:linear-gradient(135deg,#b15bbf,#d49ce0);">Articulate Rise</span></p>
           <h3>AI &amp; EdTech Tools for K–12 Classrooms</h3>
           <p>A self-paced e-learning module built in Articulate Rise that helps K–12 teachers choose the right AI/EdTech tool for the right instructional purpose — visualization, engagement, or formative assessment. Grounded in Mayer's Multimedia Learning Theory and Adult Learning Theory, it guides teachers through a decision framework with scenario-based practice, branching activities, and a cumulative final assessment.</p>
           <div class="proj-tags-row">
