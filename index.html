@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
-<meta name="build-version" content="aligned-v7-20260607">
+<meta name="build-version" content="cover-contain-v10-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -111,7 +111,7 @@ html { scroll-behavior: smooth; }
 .proj-thumb.t2 { background: linear-gradient(135deg,#8898cc,#5a6ab0); }
 .proj-thumb.t3 { background: linear-gradient(135deg,#6a8ec0,#3e5e98); }
 .proj-thumb.t5 { background: linear-gradient(135deg,#c4b5fd,#8b5cf6,#4a90d9); }
-.proj-thumb.t6 { background: linear-gradient(135deg,#d49ce0,#b15bbf,#3a2168); }
+.proj-thumb.t6 { background: linear-gradient(135deg,#a3a6e0,#7b7fcf,#1e2456); }
 .proj-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .proj-info { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
 .proj-info p.proj-tag { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose); margin: 0 0 8px 0; font-weight: 600; height: 20px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 0 0 auto; }
@@ -930,25 +930,25 @@ html { scroll-behavior: smooth; }
 
 /* ===== AI & EDTECH MODULE THEME ===== */
 :root {
-  --ae-indigo: #b15bbf;
-  --ae-indigo-l: #d49ce0;
-  --ae-navy: #3a2168;
-  --ae-amber: #7e5bc2;
-  --ae-amber-l: #a07fd6;
-  --ae-lav: #f3ecf7;
-  --ae-lav-d: #ecdcee;
-  --ae-ink: #2a1640;
-  --ae-muted: #6e5a86;
+  --ae-indigo: #7b7fcf;
+  --ae-indigo-l: #a3a6e0;
+  --ae-navy: #1e2456;
+  --ae-amber: #c79bae;
+  --ae-amber-l: #d8b8c6;
+  --ae-lav: #eeecf7;
+  --ae-lav-d: #e2def0;
+  --ae-ink: #211f4a;
+  --ae-muted: #5f5c8a;
   --ae-glass: rgba(255,255,255,0.55);
-  --ae-glass-b: rgba(200,150,200,0.40);
+  --ae-glass-b: rgba(160,158,210,0.40);
 }
 #aiedtech-root {
   display: none;
   background-color: var(--ae-lav);
   background-image:
-    radial-gradient(ellipse 100% 55% at 50% -5%, rgba(177,91,191,0.16) 0%, transparent 58%),
+    radial-gradient(ellipse 100% 55% at 50% -5%, rgba(123,127,207,0.16) 0%, transparent 58%),
     radial-gradient(ellipse 60% 60% at 95% 95%, rgba(185,143,176,0.10) 0%, transparent 52%),
-    url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='12' y='12' width='40' height='40' rx='8' fill='none' stroke='%23b15bbf' stroke-width='0.5' stroke-opacity='0.06'/%3E%3Ccircle cx='32' cy='32' r='5' fill='none' stroke='%233a2168' stroke-width='0.4' stroke-opacity='0.05'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='12' y='12' width='40' height='40' rx='8' fill='none' stroke='%237b7fcf' stroke-width='0.5' stroke-opacity='0.06'/%3E%3Ccircle cx='32' cy='32' r='5' fill='none' stroke='%231e2456' stroke-width='0.4' stroke-opacity='0.05'/%3E%3C/svg%3E");
   background-attachment: fixed;
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
@@ -965,7 +965,7 @@ html { scroll-behavior: smooth; }
 #aiedtech-root nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   background: rgba(238,240,251,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(177,91,191,0.14);
+  border-bottom: 1px solid rgba(123,127,207,0.14);
   display: flex; align-items: center; padding: 14px 48px; gap: 36px;
 }
 #aiedtech-root .ae-nav-name {
@@ -1014,8 +1014,8 @@ html { scroll-behavior: smooth; }
 .ae-tag {
   font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
   font-weight: 600; padding: 6px 16px; border-radius: 20px;
-  border: 1px solid rgba(177,91,191,0.25); color: var(--ae-indigo);
-  background: rgba(177,91,191,0.06);
+  border: 1px solid rgba(123,127,207,0.25); color: var(--ae-indigo);
+  background: rgba(123,127,207,0.06);
 }
 .ae-cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .ae-cta {
@@ -1023,19 +1023,19 @@ html { scroll-behavior: smooth; }
   background: var(--ae-indigo); color: #fff; font-size: 11.5px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
   border-radius: 8px; transition: background 0.3s;
-  box-shadow: 0 4px 20px rgba(177,91,191,0.28);
+  box-shadow: 0 4px 20px rgba(123,127,207,0.28);
 }
-.ae-cta:hover { background: #7e5bc2; }
+.ae-cta:hover { background: #6569be; }
 .ae-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
 .ae-stat {
   flex: 1; min-width: 68px;
   background: rgba(255,255,255,0.65);
-  border: 1px solid rgba(177,91,191,0.18);
+  border: 1px solid rgba(123,127,207,0.18);
   border-radius: 16px; padding: 14px 16px 12px;
   backdrop-filter: blur(8px);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.ae-stat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(177,91,191,0.12); }
+.ae-stat:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(123,127,207,0.12); }
 .ae-stat-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 30px; font-weight: 700; color: var(--ae-indigo); line-height: 1; margin-bottom: 5px;
@@ -1044,9 +1044,9 @@ html { scroll-behavior: smooth; }
 
 .ae-hero-img-slot {
   border-radius: 16px; overflow: hidden;
-  box-shadow: 0 28px 60px rgba(58,33,104,0.22), 0 0 0 1px rgba(177,91,191,0.15);
+  box-shadow: 0 28px 60px rgba(30,36,86,0.22), 0 0 0 1px rgba(123,127,207,0.15);
   aspect-ratio: 16/11; position: relative;
-  background: linear-gradient(135deg, #d49ce0, #b15bbf, #3a2168);
+  background: linear-gradient(135deg, #a3a6e0, #7b7fcf, #1e2456);
   display: flex; align-items: center; justify-content: center;
 }
 .ae-hero-img-slot > img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -1059,7 +1059,7 @@ html { scroll-behavior: smooth; }
 .ae-section { margin-bottom: 60px; width: 100%; }
 .ae-divider {
   height: 1px;
-  background: linear-gradient(to right, rgba(177,91,191,0.2), rgba(185,143,176,0.14), transparent);
+  background: linear-gradient(to right, rgba(123,127,207,0.2), rgba(185,143,176,0.14), transparent);
   margin-bottom: 60px;
 }
 .ae-label {
@@ -1082,8 +1082,8 @@ html { scroll-behavior: smooth; }
 .ae-prose strong { color: var(--ae-ink); font-weight: 600; }
 
 .ae-callout {
-  background: linear-gradient(135deg, rgba(177,91,191,0.06), rgba(185,143,176,0.05));
-  border: 1px solid rgba(177,91,191,0.13); border-left: 3px solid var(--ae-amber);
+  background: linear-gradient(135deg, rgba(123,127,207,0.06), rgba(185,143,176,0.05));
+  border: 1px solid rgba(123,127,207,0.13); border-left: 3px solid var(--ae-amber);
   border-radius: 16px; padding: 22px 26px;
   font-size: 14px; line-height: 1.8; color: var(--ae-muted); font-style: italic;
   margin-top: 24px;
@@ -1092,7 +1092,7 @@ html { scroll-behavior: smooth; }
 
 .ae-theory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
 .ae-theory-card {
-  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(123,127,207,0.15);
   border-top: 2.5px solid var(--ae-indigo);
   border-radius: 16px; padding: 26px 28px;
 }
@@ -1103,11 +1103,11 @@ html { scroll-behavior: smooth; }
 .ae-objectives { display: flex; flex-direction: column; gap: 12px; width: 100%; }
 .ae-objective {
   display: grid; grid-template-columns: 34px 1fr; gap: 16px; align-items: start;
-  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(123,127,207,0.15);
   border-radius: 14px; padding: 16px 22px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.ae-objective:hover { transform: translateX(4px); box-shadow: 4px 8px 24px rgba(177,91,191,0.08); }
+.ae-objective:hover { transform: translateX(4px); box-shadow: 4px 8px 24px rgba(123,127,207,0.08); }
 .ae-obj-num {
   width: 34px; height: 34px; border-radius: 50%;
   background: linear-gradient(135deg, var(--ae-indigo), var(--ae-amber));
@@ -1119,55 +1119,55 @@ html { scroll-behavior: smooth; }
 
 .ae-flow-img-slot {
   border-radius: 16px; overflow: hidden; position: relative; width: 100%;
-  background: linear-gradient(135deg, #f2e0ee, #e6c8e0);
-  border: 1px solid rgba(177,91,191,0.15);
-  box-shadow: 0 8px 24px rgba(177,91,191,0.10);
+  background: linear-gradient(135deg, #e2e0f0, #cecbe8);
+  border: 1px solid rgba(123,127,207,0.15);
+  box-shadow: 0 8px 24px rgba(123,127,207,0.10);
   cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-.ae-flow-img-slot:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(177,91,191,0.15); }
+.ae-flow-img-slot:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(123,127,207,0.15); }
 .ae-flow-img-slot > img { width: 100%; height: auto; display: block; }
 .ae-flow-img-ph {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 10px; min-height: 220px; color: rgba(177,91,191,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
+  gap: 10px; min-height: 220px; color: rgba(123,127,207,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
 }
 .ae-flow { display: flex; flex-direction: column; gap: 14px; width: 100%; }
 .ae-flow-step {
   display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start;
-  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.13);
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(123,127,207,0.13);
   border-radius: 16px; padding: 18px 22px;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-.ae-flow-step:hover { transform: translateX(5px); box-shadow: 5px 10px 28px rgba(177,91,191,0.10); }
+.ae-flow-step:hover { transform: translateX(5px); box-shadow: 5px 10px 28px rgba(123,127,207,0.10); }
 .ae-flow-icon {
   width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center; font-size: 20px;
 }
-.ae-flow-icon.l0 { background: linear-gradient(135deg,#f0d4e6,#d49ce0); }
-.ae-flow-icon.l1 { background: linear-gradient(135deg,#e0b0d4,#b15bbf); }
-.ae-flow-icon.l2 { background: linear-gradient(135deg,#caa0e0,#7e5bc2); }
-.ae-flow-icon.l3 { background: linear-gradient(135deg,#d97ab0,#b15bbf); }
-.ae-flow-icon.l4 { background: linear-gradient(135deg,#3a2168,#7e5bc2); }
+.ae-flow-icon.l0 { background: linear-gradient(135deg,#f0d4e6,#a3a6e0); }
+.ae-flow-icon.l1 { background: linear-gradient(135deg,#e0b0d4,#7b7fcf); }
+.ae-flow-icon.l2 { background: linear-gradient(135deg,#caa0e0,#c79bae); }
+.ae-flow-icon.l3 { background: linear-gradient(135deg,#d97ab0,#7b7fcf); }
+.ae-flow-icon.l4 { background: linear-gradient(135deg,#1e2456,#c79bae); }
 .ae-flow-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--ae-ink); margin-bottom: 4px; }
 .ae-flow-body p { font-size: 13px; line-height: 1.7; color: var(--ae-muted); }
 .ae-flow-badge {
   display: inline-flex; align-items: center; margin-bottom: 6px;
   font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
-  color: var(--ae-indigo); background: rgba(177,91,191,0.08);
-  border: 1px solid rgba(177,91,191,0.18); border-radius: 20px; padding: 3px 10px;
+  color: var(--ae-indigo); background: rgba(123,127,207,0.08);
+  border: 1px solid rgba(123,127,207,0.18); border-radius: 20px; padding: 3px 10px;
 }
 
 .ae-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; width: 100%; }
 .ae-pillar { border-radius: 18px; padding: 26px 22px 30px; position: relative; overflow: hidden; }
-.ae-pillar.p1 { background: linear-gradient(155deg, #f7e2f0, #eec4e0); }
-.ae-pillar.p2 { background: linear-gradient(155deg, #ece0f7, #d4c0ee); }
-.ae-pillar.p3 { background: linear-gradient(155deg, #f7dcec, #e8c0da); }
+.ae-pillar.p1 { background: linear-gradient(155deg, #e4e3f4, #c9c8ea); }
+.ae-pillar.p2 { background: linear-gradient(155deg, #f2e6ee, #ddc2d2); }
+.ae-pillar.p3 { background: linear-gradient(155deg, #e0deef, #c6c4e8); }
 .ae-pillar-icon { font-size: 26px; margin-bottom: 12px; }
 .ae-pillar h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--ae-ink); margin-bottom: 9px; }
 .ae-pillar p { font-size: 12.5px; line-height: 1.7; color: var(--ae-muted); }
 
 .ae-assess-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
 .ae-assess-card {
-  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.15);
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(123,127,207,0.15);
   border-radius: 16px; padding: 24px 26px;
 }
 .ae-assess-card .ac-tag {
@@ -1181,34 +1181,34 @@ html { scroll-behavior: smooth; }
 
 .ae-access { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; width: 100%; }
 .ae-access-card {
-  background: rgba(255,255,255,0.65); border: 1px solid rgba(177,91,191,0.12);
+  background: rgba(255,255,255,0.65); border: 1px solid rgba(123,127,207,0.12);
   border-radius: 16px; padding: 22px 20px;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-.ae-access-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(177,91,191,0.10); }
+.ae-access-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(123,127,207,0.10); }
 .ae-access-icon { font-size: 22px; margin-bottom: 11px; }
 .ae-access-card h5 { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; color: var(--ae-ink); margin-bottom: 7px; }
 .ae-access-card p { font-size: 12.5px; line-height: 1.68; color: var(--ae-muted); }
 .ae-wcag-badge {
   display: inline-flex; align-items: center; gap: 6px; margin-top: 18px;
-  background: linear-gradient(135deg, rgba(177,91,191,0.10), rgba(185,143,176,0.10));
-  border: 1px solid rgba(177,91,191,0.2); border-radius: 30px; padding: 8px 18px;
+  background: linear-gradient(135deg, rgba(123,127,207,0.10), rgba(185,143,176,0.10));
+  border: 1px solid rgba(123,127,207,0.2); border-radius: 30px; padding: 8px 18px;
   font-size: 12px; font-weight: 600; color: var(--ae-navy);
 }
 
 .ae-screens { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; width: 100%; }
 .ae-screen-slot {
   border-radius: 12px; overflow: hidden; position: relative;
-  background: linear-gradient(135deg, #f2e0ee, #e6c8e0);
-  border: 1px solid rgba(177,91,191,0.15);
-  box-shadow: 0 6px 20px rgba(177,91,191,0.08);
+  background: linear-gradient(135deg, #e2e0f0, #cecbe8);
+  border: 1px solid rgba(123,127,207,0.15);
+  box-shadow: 0 6px 20px rgba(123,127,207,0.08);
   cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.ae-screen-slot:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(177,91,191,0.13); }
+.ae-screen-slot:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(123,127,207,0.13); }
 .ae-screen-slot > img { width: 100%; height: auto; display: block; border-radius: 12px; }
 .ae-screen-ph {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 8px; color: rgba(177,91,191,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
+  gap: 8px; color: rgba(123,127,207,0.55); font-size: 11.5px; text-align: center; padding: 40px 16px;
 }
 .ae-screen-label { margin-top: 10px; font-size: 13px; color: var(--ae-muted); line-height: 1.5; }
 .ae-screen-label strong { display: block; color: var(--ae-ink); font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
@@ -1219,15 +1219,15 @@ html { scroll-behavior: smooth; }
   background: var(--ae-indigo); color: #fff; font-size: 11.5px; font-weight: 600;
   letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none;
   transition: all 0.25s; border: 1.5px solid transparent;
-  box-shadow: 0 4px 14px rgba(177,91,191,0.20);
+  box-shadow: 0 4px 14px rgba(123,127,207,0.20);
 }
-.ae-pdf-btn:hover { background: #7e5bc2; }
+.ae-pdf-btn:hover { background: #6569be; }
 .ae-pdf-note { font-size: 11.5px; color: var(--ae-muted); margin-top: 10px; font-style: italic; line-height: 1.6; opacity: 0.85; }
 
 #aiedtech-root footer {
   text-align: center; padding: 36px; font-size: 11.5px;
   color: rgba(110,90,134,0.5); letter-spacing: 0.08em;
-  border-top: 1px solid rgba(177,91,191,0.1);
+  border-top: 1px solid rgba(123,127,207,0.1);
 }
 @media(max-width:800px) {
   .ae-hero { grid-template-columns: 1fr; gap: 36px; padding: 120px 24px 60px; }
@@ -1367,11 +1367,11 @@ html { scroll-behavior: smooth; }
       <!-- PROJECT 2: AI & EdTech Module -->
       <div class="proj-card reveal" onclick="if(!event.target.classList.contains('proj-skill-tag'))showAIEdTech()">
         <div class="proj-thumb t6">
-          <img src="image/aiedtech_cover.png" alt="AI & EdTech Module">
+          <img src="image/aiedtech_cover.png" alt="AI & EdTech Module" style="object-fit:contain;padding:0;">
         </div>
         <div class="proj-info">
-          <p class="proj-tag">Course Project<span class="proj-badge" style="background:linear-gradient(135deg,#b15bbf,#d49ce0);">Articulate Rise</span></p>
-          <h3>AI &amp; EdTech Tools for K–12 Classrooms</h3>
+          <p class="proj-tag">Course Project<span class="proj-badge" style="background:linear-gradient(135deg,#7b7fcf,#a3a6e0);">Articulate Rise</span></p>
+          <h3>AI &amp; EdTech: An Online Course for K–12 Teachers</h3>
           <p>A self-paced e-learning module built in Articulate Rise that helps K–12 teachers choose the right AI/EdTech tool for the right instructional purpose — visualization, engagement, or formative assessment. Grounded in Mayer's Multimedia Learning Theory and Adult Learning Theory, it guides teachers through a decision framework with scenario-based practice, branching activities, and a cumulative final assessment.</p>
           <div class="proj-tags-row">
             <span class="proj-skill-tag" data-skill="Instructional Design">Instructional Design</span>
@@ -2328,7 +2328,7 @@ html { scroll-behavior: smooth; }
 <div id="aiedtech-root" style="display:none;">
 <nav>
   <span class="ae-nav-name" onclick="showPortfolio()">
-    Erica Shao <img src="image/flower.png" alt="" class="nav-flower" style="height:26px;width:26px;object-fit:contain;filter:hue-rotate(285deg);">
+    Erica Shao <img src="image/flower.png" alt="" class="nav-flower" style="height:26px;width:26px;object-fit:contain;filter:hue-rotate(250deg);">
   </span>
   <span class="ae-nav-back" onclick="showPortfolio()">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
@@ -2338,8 +2338,8 @@ html { scroll-behavior: smooth; }
 
 <div class="ae-hero">
   <div class="ae-hero-text">
-    <p class="ae-eyebrow">Course Project · E-Learning Module</p>
-    <h1>Using <em>AI &amp; EdTech Tools</em><br>in K–12 Classrooms</h1>
+    <p class="ae-eyebrow">Course Project · Online Course</p>
+    <h1>An Online <em>Course</em> on<br>AI &amp; EdTech Tools for K–12</h1>
     <p class="ae-hero-sub">A self-paced Articulate Rise module that helps K–12 teachers move past shallow, one-size-fits-all AI use — and instead choose the right tool for the right instructional purpose: visualization, engagement, or formative assessment.</p>
     <div class="ae-tag-row">
       <span class="ae-tag">Instructional Design</span>
@@ -2468,7 +2468,7 @@ html { scroll-behavior: smooth; }
       </div>
       <div>
         <div class="ae-screen-slot" onclick="openLightbox('image/activityexample2.png','Activity example')">
-          <img src="activityexample2.png" alt="Activity example" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+          <img src="image/activityexample2.png" alt="Activity example" onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
           <div class="ae-screen-ph" style="display:none;">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
             <span>image/activityexample2.png</span>
@@ -2881,7 +2881,7 @@ function showPortfolio() {
 (function() {
   var aeGlowEl = document.createElement('div');
   aeGlowEl.id = 'aiedtech-glow';
-  aeGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:90px;height:90px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(177,91,191,0.40) 0%,rgba(185,143,176,0.20) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
+  aeGlowEl.style.cssText = 'position:fixed;top:0;left:0;width:90px;height:90px;pointer-events:none;z-index:999;border-radius:50%;background:radial-gradient(circle,rgba(123,127,207,0.40) 0%,rgba(185,143,176,0.20) 40%,transparent 68%);transform:translate(-50%,-50%);transition:opacity 0.4s ease;mix-blend-mode:multiply;opacity:0;';
   document.body.appendChild(aeGlowEl);
   var aeX=window.innerWidth/2, aeY=window.innerHeight/2;
   var aeCurX=aeX, aeCurY=aeY;
