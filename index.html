@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
-<meta name="build-version" content="hero-stack-v15-20260607">
+<meta name="build-version" content="hero-flip-v16-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -74,46 +74,31 @@ html { scroll-behavior: smooth; }
 #home { padding: 120px 80px 80px; min-height: 100vh; }
 .hero-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; max-width: 1080px; width: 100%; }
 .hero-photo-col { animation: fadeUp 1s ease 0.1s both; }
-.hero-stack { position: relative; width: 100%; aspect-ratio: 4/3; }
-.hero-stack-back {
-  position: absolute; top: 14px; right: -16px; width: 100%; height: 100%;
-  border-radius: 6px; z-index: 1;
-  background: linear-gradient(135deg, #dbe4f3, #b9cae6);
-  border: 1px solid rgba(255,255,255,0.6);
-  box-shadow: 0 16px 40px rgba(20,35,90,0.16);
-  transform: rotate(2.2deg);
+.hero-stack {
+  position: relative; width: 100%; aspect-ratio: 4/3;
+  cursor: pointer;
+  /* extra room so the offset back card isn't clipped */
+  margin-right: 18px; margin-bottom: 18px;
 }
-.hero-carousel {
-  position: absolute; inset: 0; z-index: 2;
-  width: 100%; aspect-ratio: 4/3;
+.hero-card {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   border-radius: 6px; overflow: hidden;
-  box-shadow: 0 20px 56px rgba(20,35,90,0.20);
+  box-shadow: 0 16px 44px rgba(20,35,90,0.18);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.5s ease, z-index 0s linear 0.25s;
+  /* default = BACK position: offset down-right, slightly rotated, behind */
+  transform: translate(18px, 18px) rotate(2.4deg) scale(0.97);
+  z-index: 1;
 }
-.hero-carousel-track {
-  display: flex; width: 100%; height: 100%;
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+.hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-card.hero-front {
+  /* FRONT position: centered, upright, on top */
+  transform: translate(0, 0) rotate(0deg) scale(1);
+  box-shadow: 0 22px 56px rgba(20,35,90,0.22);
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.5s ease, z-index 0s linear 0s;
 }
-.hero-slide {
-  min-width: 100%; width: 100%; height: 100%;
-  object-fit: cover; display: block; flex-shrink: 0;
-}
-.hero-tap {
-  position: absolute; top: 0; bottom: 0; width: 42%;
-  cursor: pointer; z-index: 3;
-}
-.hero-tap-prev { left: 0; }
-.hero-tap-next { right: 0; }
-.hero-dots {
-  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-  display: flex; gap: 7px; z-index: 4;
-}
-.hero-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(255,255,255,0.55); cursor: pointer;
-  transition: background 0.25s, transform 0.25s;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
-}
-.hero-dot.active { background: #fff; transform: scale(1.25); }
 .hero-text-col { animation: fadeUp 0.9s ease both; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 18px; font-weight: 600; }
 .hero-text-col h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px,4.8vw,72px); font-weight: 700; line-height: 1.05; margin-bottom: 16px; }
@@ -1303,19 +1288,12 @@ html { scroll-behavior: smooth; }
 <section id="home">
   <div class="hero-inner">
     <div class="hero-photo-col">
-      <div class="hero-stack">
-        <div class="hero-stack-back"></div>
-        <div class="hero-carousel" id="heroCarousel">
-          <div class="hero-carousel-track" id="heroTrack">
-            <img src="shaoyue_photo.jpg" alt="Erica Shao" class="hero-slide">
-            <img src="shaoyue_photo1.jpg" alt="Erica Shao" class="hero-slide">
-          </div>
-          <div class="hero-tap hero-tap-prev" onclick="heroPhoto(-1)" aria-label="Previous photo"></div>
-          <div class="hero-tap hero-tap-next" onclick="heroPhoto(1)" aria-label="Next photo"></div>
-          <div class="hero-dots" id="heroDots">
-            <span class="hero-dot active" onclick="heroPhotoGo(0)"></span>
-            <span class="hero-dot" onclick="heroPhotoGo(1)"></span>
-          </div>
+      <div class="hero-stack" id="heroStack" onclick="heroFlip()">
+        <div class="hero-card hero-card-b" id="heroCardB">
+          <img src="shaoyue_photo1.jpg" alt="Erica Shao">
+        </div>
+        <div class="hero-card hero-card-a hero-front" id="heroCardA">
+          <img src="shaoyue_photo.jpg" alt="Erica Shao">
         </div>
       </div>
     </div>
@@ -2677,19 +2655,13 @@ function navTo(id, linkEl) {
   if (linkEl) linkEl.classList.add('active');
 }
 
-var _heroIdx = 0;
-function _heroRender() {
-  var track = document.getElementById('heroTrack');
-  if (!track) return;
-  var total = track.querySelectorAll('.hero-slide').length;
-  if (total === 0) return;
-  _heroIdx = (_heroIdx % total + total) % total;
-  track.style.transform = 'translateX(-' + (_heroIdx * 100) + '%)';
-  var dots = document.querySelectorAll('#heroDots .hero-dot');
-  dots.forEach(function(d, i) { d.classList.toggle('active', i === _heroIdx); });
+function heroFlip() {
+  var a = document.getElementById('heroCardA');
+  var b = document.getElementById('heroCardB');
+  if (!a || !b) return;
+  a.classList.toggle('hero-front');
+  b.classList.toggle('hero-front');
 }
-function heroPhoto(dir) { _heroIdx += dir; _heroRender(); }
-function heroPhotoGo(i) { _heroIdx = i; _heroRender(); }
 
 function initCarousels() {
   document.querySelectorAll('.carousel').forEach(function(car) {
