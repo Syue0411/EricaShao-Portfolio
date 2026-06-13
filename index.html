@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
-<meta name="build-version" content="hero-slide-v17-20260607">
+<meta name="build-version" content="hero-snap-v20-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -95,11 +95,12 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 22px 56px rgba(20,35,90,0.22);
   z-index: 3;
 }
-/* the card currently leaving: slides out to the left and fades */
+/* the card currently leaving: quick, short slide out to the left */
 .hero-card.is-leaving {
-  transform: translateX(-60%) rotate(-7deg) scale(0.94);
+  transform: translateX(-18%) rotate(-4deg) scale(0.95);
   opacity: 0;
   z-index: 4;
+  transition: transform 0.3s cubic-bezier(0.5,0,0.75,0), opacity 0.3s ease;
 }
 .hero-text-col { animation: fadeUp 0.9s ease both; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 18px; font-weight: 600; }
@@ -1291,8 +1292,8 @@ html { scroll-behavior: smooth; }
   <div class="hero-inner">
     <div class="hero-photo-col">
       <div class="hero-stack" id="heroStack" onclick="heroNext()">
-        <img src="shaoyue_photo.jpg" alt="Erica Shao" class="hero-card" data-i="0">
-        <img src="shaoyue_photo1.jpg" alt="Erica Shao" class="hero-card" data-i="1">
+        <img src="shaoyue_photo1.jpg" alt="Erica Shao" class="hero-card" data-i="0">
+        <img src="shaoyue_photo.jpg" alt="Erica Shao" class="hero-card" data-i="1">
       </div>
     </div>
     <div class="hero-text-col">
@@ -2693,7 +2694,7 @@ function heroNext() {
     leaving.classList.remove('is-leaving');
     _heroApply();
     _heroAnim = false;
-  }, 560);
+  }, 320);
 }
 document.addEventListener('DOMContentLoaded', _heroInit);
 _heroInit();
