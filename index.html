@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
-<meta name="build-version" content="hero-flip-v16-20260607">
+<meta name="build-version" content="hero-slide-v17-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -77,27 +77,29 @@ html { scroll-behavior: smooth; }
 .hero-stack {
   position: relative; width: 100%; aspect-ratio: 4/3;
   cursor: pointer;
-  /* extra room so the offset back card isn't clipped */
-  margin-right: 18px; margin-bottom: 18px;
+  margin-right: 22px; margin-bottom: 8px;
 }
 .hero-card {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  border-radius: 6px; overflow: hidden;
-  box-shadow: 0 16px 44px rgba(20,35,90,0.18);
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.5s ease, z-index 0s linear 0.25s;
-  /* default = BACK position: offset down-right, slightly rotated, behind */
-  transform: translate(18px, 18px) rotate(2.4deg) scale(0.97);
-  z-index: 1;
+  object-fit: cover; border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(20,35,90,0.16);
+  transition: transform 0.55s cubic-bezier(0.33,0,0.2,1), opacity 0.55s ease;
+  will-change: transform, opacity;
+  transform-origin: center center;
 }
-.hero-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-card.hero-front {
-  /* FRONT position: centered, upright, on top */
-  transform: translate(0, 0) rotate(0deg) scale(1);
+/* default = stacked behind (peeking right, slightly rotated) */
+.hero-card { transform: translateX(22px) rotate(3deg) scale(0.96); z-index: 1; }
+/* front card: centered, upright, on top */
+.hero-card.is-front {
+  transform: translateX(0) rotate(0deg) scale(1);
   box-shadow: 0 22px 56px rgba(20,35,90,0.22);
-  z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
-              box-shadow 0.5s ease, z-index 0s linear 0s;
+  z-index: 3;
+}
+/* the card currently leaving: slides out to the left and fades */
+.hero-card.is-leaving {
+  transform: translateX(-60%) rotate(-7deg) scale(0.94);
+  opacity: 0;
+  z-index: 4;
 }
 .hero-text-col { animation: fadeUp 0.9s ease both; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 18px; font-weight: 600; }
@@ -1288,13 +1290,9 @@ html { scroll-behavior: smooth; }
 <section id="home">
   <div class="hero-inner">
     <div class="hero-photo-col">
-      <div class="hero-stack" id="heroStack" onclick="heroFlip()">
-        <div class="hero-card hero-card-b" id="heroCardB">
-          <img src="shaoyue_photo1.jpg" alt="Erica Shao">
-        </div>
-        <div class="hero-card hero-card-a hero-front" id="heroCardA">
-          <img src="shaoyue_photo.jpg" alt="Erica Shao">
-        </div>
+      <div class="hero-stack" id="heroStack" onclick="heroNext()">
+        <img src="shaoyue_photo.jpg" alt="Erica Shao" class="hero-card" data-i="0">
+        <img src="shaoyue_photo1.jpg" alt="Erica Shao" class="hero-card" data-i="1">
       </div>
     </div>
     <div class="hero-text-col">
@@ -2655,13 +2653,50 @@ function navTo(id, linkEl) {
   if (linkEl) linkEl.classList.add('active');
 }
 
-function heroFlip() {
-  var a = document.getElementById('heroCardA');
-  var b = document.getElementById('heroCardB');
-  if (!a || !b) return;
-  a.classList.toggle('hero-front');
-  b.classList.toggle('hero-front');
+var _heroOrder = null, _heroAnim = false;
+function _heroInit() {
+  var stack = document.getElementById('heroStack');
+  if (!stack) return null;
+  var cards = Array.prototype.slice.call(stack.querySelectorAll('.hero-card'));
+  if (_heroOrder === null) {
+    _heroOrder = cards.slice();           // initial order = DOM order
+    _heroApply();
+  }
+  return cards;
 }
+function _heroApply() {
+  // first in order = front, rest = stacked behind (in reverse so next is just under front)
+  _heroOrder.forEach(function(card, i) {
+    card.classList.remove('is-front', 'is-leaving');
+    if (i === 0) card.classList.add('is-front');
+    // stacking: cards further back sit slightly more to the right
+    card.style.zIndex = (i === 0) ? 3 : (2 - i);
+  });
+}
+function heroNext() {
+  if (_heroAnim) return;
+  var cards = _heroInit();
+  if (!cards || _heroOrder.length < 2) return;
+  _heroAnim = true;
+  var leaving = _heroOrder[0];
+  // bring the next card to front immediately (it rises as the top slides away)
+  var next = _heroOrder[1];
+  next.classList.add('is-front');
+  next.style.zIndex = 3;
+  // slide the current front out to the left
+  leaving.classList.remove('is-front');
+  leaving.classList.add('is-leaving');
+  leaving.style.zIndex = 5;
+  setTimeout(function() {
+    // move leaving card to the back of the order
+    _heroOrder.push(_heroOrder.shift());
+    leaving.classList.remove('is-leaving');
+    _heroApply();
+    _heroAnim = false;
+  }, 560);
+}
+document.addEventListener('DOMContentLoaded', _heroInit);
+_heroInit();
 
 function initCarousels() {
   document.querySelectorAll('.carousel').forEach(function(car) {
