@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erica (Yue) Shao – Instructional Designer</title>
-<meta name="build-version" content="hero-fade-v21-20260607">
+<meta name="build-version" content="hero-snap-v22-20260607">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -100,7 +100,7 @@ html { scroll-behavior: smooth; }
   transform: translateX(-18%) rotate(-4deg) scale(0.95);
   opacity: 0;
   z-index: 4;
-  transition: transform 0.3s cubic-bezier(0.5,0,0.75,0), opacity 0.7s ease-out;
+  transition: transform 0.3s cubic-bezier(0.5,0,0.75,0), opacity 0.3s ease;
 }
 .hero-text-col { animation: fadeUp 0.9s ease both; }
 .hero-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); margin-bottom: 18px; font-weight: 600; }
@@ -2694,7 +2694,7 @@ function heroNext() {
     leaving.classList.remove('is-leaving');
     _heroApply();
     _heroAnim = false;
-  }, 700);
+  }, 320);
 }
 document.addEventListener('DOMContentLoaded', _heroInit);
 _heroInit();
